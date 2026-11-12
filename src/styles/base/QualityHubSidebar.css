@@ -1,0 +1,63 @@
+/* Navegação real: cores locais derivadas dos tokens globais, sem afetar telas. */
+.hub-sidebar {
+  --sidebar-bg: color-mix(in srgb, var(--app-bg) 70%, var(--surface));
+  --sidebar-border: color-mix(in srgb, var(--border-color) 65%, transparent);
+  --sidebar-selected: var(--accent-bg);
+  background: var(--sidebar-bg);
+  color: var(--text-primary);
+  border-right: 1px solid var(--sidebar-border);
+  padding: 24px 12px 15px;
+}
+.hub-sidebar .hub-brand { height: 82px; flex-shrink: 0; box-sizing: border-box; padding: 0 4px 24px; gap: 8px; color: var(--accent-color); }
+.hub-sidebar .hub-brand-identity { display: flex; align-items: center; gap: 9px; min-width: 0; }
+.hub-sidebar .hub-brand-identity > svg { width: 29px; height: 29px; color: var(--qh-cockpit-primary); }
+.hub-sidebar .hub-brand strong { font-size: 16px; color: var(--text-primary); letter-spacing: -.4px; }
+.hub-sidebar .hub-brand strong .hub-brand-highlight { color: var(--accent-color); }
+.hub-sidebar .hub-brand-text > span { color: var(--text-secondary); font-size: 8px; letter-spacing: 1.2px; margin-top: 3px; }
+.hub-sidebar .hub-sidebar-toggle { width: 26px; height: 28px; border: 0; padding: 4px; border-radius: 5px; background: transparent; color: var(--text-secondary); }
+.hub-sidebar .hub-sidebar-toggle svg { width: 16px; height: 16px; }
+.hub-sidebar .hub-sidebar-toggle:hover { background: var(--sidebar-selected); color: var(--accent-color); }
+.hub-sidebar .hub-nav-label { color: var(--text-secondary); font-size: 9px; letter-spacing: 1.4px; padding: 0 8px 14px; margin: 0; }
+.hub-sidebar .hub-nav { gap: 6px; }
+.hub-sidebar .hub-nav-item { position: relative; min-height: 46px; padding: 13px 12px; gap: 12px; font-size: 13px; line-height: 20px; color: var(--text-secondary); }
+.hub-sidebar .hub-nav-item > svg { width: 18px; height: 18px; flex-shrink: 0; }
+.hub-sidebar .hub-nav-item:not(:disabled) { cursor: pointer; }
+.hub-sidebar .hub-nav-item:not(:disabled):hover { background: var(--sidebar-selected); color: var(--text-primary); }
+.hub-sidebar .hub-nav-item.active { background: var(--sidebar-selected); color: var(--accent-color); font-weight: 600; }
+.hub-sidebar .hub-nav-item.active > svg { color: var(--qh-cockpit-primary); }
+.hub-sidebar .hub-nav-item.active::after { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--qh-cockpit-primary); margin-left: auto; flex-shrink: 0; }
+.hub-sidebar .hub-nav-item:disabled { opacity: .6; }
+.hub-sidebar .hub-sidebar-footer { padding: 18px 0 0; }
+.hub-sidebar .hub-sidebar-appearance { display: flex; align-items: center; gap: 12px; width: 100%; min-height: 46px; box-sizing: border-box; padding: 13px 12px; border: 0; border-radius: 8px; background: transparent; color: var(--text-secondary); font: inherit; font-size: 12px; white-space: nowrap; cursor: pointer; }
+.hub-sidebar .hub-sidebar-appearance small { margin-left: auto; font-size: 10px; }
+.hub-sidebar .hub-sidebar-appearance:hover { color: var(--accent-color); background: var(--sidebar-selected); }
+.hub-sidebar .hub-sidebar-profile { border-top: 1px solid var(--sidebar-border); padding-top: 19px; margin-top: 12px; margin-bottom: 0; }
+.hub-sidebar .hub-sidebar-profile .hub-profile-trigger { padding: 10px 12px; min-height: 54px; gap: 10px; border: 0; border-radius: 8px; color: var(--text-primary); background: transparent; }
+.hub-sidebar .hub-sidebar-profile .hub-profile-trigger:hover,
+.hub-sidebar .hub-sidebar-profile .hub-profile-trigger.menu-open { background: var(--sidebar-selected); }
+.hub-sidebar .hub-sidebar-profile .hub-profile-trigger .hub-avatar { width: 33px; height: 33px; border-radius: 11px; border: 1px solid var(--sidebar-border); background: var(--app-bg); color: var(--accent-color); font-size: 11px; }
+.hub-sidebar .hub-sidebar-profile .hub-user-info strong { font-size: 12px; line-height: 1.5; color: var(--text-primary); max-width: 100%; }
+.hub-sidebar .hub-sidebar-profile .hub-user-info span { font-size: 11px; line-height: 1.5; color: var(--text-secondary); }
+.hub-sidebar .hub-sidebar-profile .hub-profile-chevron { display: block; width: 14px; height: 14px; color: var(--text-secondary); flex-shrink: 0; }
+.hub-sidebar .hub-environment { gap: 12px; margin: 12px 0 0; min-height: 46px; padding: 13px 12px; border-radius: 8px; font-size: 10px; color: var(--text-secondary); }
+.hub-sidebar .hub-environment > svg { width: 14px; height: 14px; }
+.hub-sidebar .hub-environment:hover { color: var(--accent-color); background: var(--sidebar-selected); }
+.hub-sidebar button:focus-visible { outline: 2px solid var(--qh-focus); outline-offset: 2px; }
+
+@media (min-width: 651px) {
+  .hub-sidebar { width: 248px; }
+  .hub-main { margin-left: 248px; }
+  .hub-layout-collapsed .hub-sidebar { width: 72px; padding: 24px 12px 15px; }
+  .hub-layout-collapsed .hub-main { margin-left: 72px; }
+  .hub-layout-collapsed .hub-sidebar .hub-brand { height: 109px; padding: 0 0 22px; margin: 0; flex-direction: column; justify-content: flex-start; gap: 20px; }
+  .hub-layout-collapsed .hub-sidebar .hub-brand-identity { display: flex; justify-content: center; }
+  .hub-layout-collapsed .hub-sidebar .hub-nav-item { justify-content: center; padding: 13px 0; }
+  .hub-layout-collapsed .hub-sidebar .hub-nav-item.active::after { display: none; }
+  .hub-layout-collapsed .hub-sidebar .hub-sidebar-footer { padding: 18px 0 0; }
+  .hub-layout-collapsed .hub-sidebar .hub-sidebar-appearance { justify-content: center; padding: 13px 0; }
+  .hub-layout-collapsed .hub-sidebar .hub-sidebar-appearance span,
+  .hub-layout-collapsed .hub-sidebar .hub-sidebar-appearance small { display: none; }
+  .hub-layout-collapsed .hub-sidebar .hub-profile-trigger { justify-content: center; padding: 10px 0; }
+  .hub-layout-collapsed .hub-sidebar .hub-profile-trigger:hover > .hub-avatar { background: var(--sidebar-selected); border-color: var(--sidebar-border); }
+  .hub-layout-collapsed .hub-sidebar .hub-environment { justify-content: center; padding: 13px 0; }
+}

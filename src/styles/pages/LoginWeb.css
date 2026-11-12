@@ -1,0 +1,82 @@
+/* Layout de acesso aprovado no BAT/web e adotado pelo desktop a partir da RC9. */
+.login-email-input { display: contents; }
+.login-page.login-web {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  grid-template-columns: minmax(0, 34%) minmax(0, 66%);
+  grid-template-rows: 92px minmax(0, 1fr) 52px;
+  border: 0;
+  border-radius: 0;
+  box-sizing: border-box;
+  background: var(--app-bg);
+}
+.login-web-header { grid-column: 1 / -1; display: flex; align-items: center; padding: 0 38px; border-bottom: 1px solid var(--border-color); }
+.login-web-header .brand { gap: 12px; }
+.login-web-header .brand > svg { color: var(--qh-cockpit-primary); }
+.login-web-header .brand .brand-name { color: var(--text-primary); font-size: 20px; }
+.login-web-header .brand .brand-name > span { color: var(--accent-color); }
+.login-web .brand-panel { grid-column: 1; grid-row: 2; padding: 40px 38px; justify-content: center; color: var(--text-primary); background: transparent; border-right: 1px solid var(--border-color); }
+.login-web-story { max-width: 500px; }
+.login-web-story .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--accent-color); font-size: 10px; letter-spacing: 1.7px; }
+.login-web-story .eyebrow::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--qh-cockpit-primary); }
+.login-web-story h1 { margin: 26px 0 22px; color: var(--text-primary); font-size: clamp(30px, 3vw, 44px); line-height: 1.18; letter-spacing: -1.4px; }
+.login-web-story h1 em { color: var(--accent-color); font-style: normal; }
+.login-web-story > p { margin: 0; color: var(--text-secondary); font-size: 14px; line-height: 1.9; }
+.login-web-features { position: relative; display: flex; gap: 28px; margin: 46px auto 0; max-width: 380px; }
+.login-web-features::before { content: ''; position: absolute; top: 22px; left: 20px; right: 20px; height: 1px; background: var(--border-color); }
+.login-web-features > div { position: relative; flex: 1; min-width: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.login-web-features > div > span { display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--border-color); border-radius: 13px; color: var(--accent-color); background: var(--surface); }
+.login-web-features strong { margin-top: 16px; font-size: 11px; font-weight: 600; }
+.login-web-features small { margin-top: 5px; font-size: 10px; color: var(--text-secondary); }
+.login-web-summary { display: flex; align-items: center; gap: 9px; margin-top: 46px; color: var(--text-secondary); font-size: 11px; }
+.login-web .form-panel { position: static; grid-column: 2; grid-row: 2; padding: 32px; background: var(--surface); justify-content: center; align-items: center; }
+.login-web .login-theme-control { top: 26px; right: 7%; z-index: 1; padding: 4px; border-radius: 10px; box-shadow: none; }
+.login-web .theme-option { width: 29px; height: 29px; border-radius: 6px; }
+.login-web .theme-option.active { border-color: transparent; background: var(--accent-bg); color: var(--accent-color); }
+.login-web .mobile-brand { display: none; }
+.login-web .login-form { width: min(100%, 340px); max-width: 340px; }
+.login-web .form-eyebrow { font-size: 9px; letter-spacing: 1.7px; }
+.login-web .login-form h2 { margin: 16px 0 12px; font-size: 29px; line-height: 1.2; letter-spacing: -.9px; }
+.login-web .description { margin: 0 0 30px; font-size: 12px; line-height: 1.6; }
+.login-web .login-form form > label,
+.login-web .password-field > label { font-size: 11px; font-weight: 600; margin-bottom: 8px; }
+.login-web .login-email-input { position: relative; display: block; }
+.login-web .login-email-input > svg,
+.login-web .login-web-lock { position: absolute; top: 15px; left: 14px; color: var(--text-secondary); pointer-events: none; }
+.login-web .login-form input { height: 46px; border-radius: 8px; margin-bottom: 22px; background: var(--app-bg); font-size: 12px; }
+.login-web .login-email-input input,
+.login-web .password-input-wrapper input { padding-left: 40px; }
+.login-web .password-input-wrapper input { margin-bottom: 0; }
+.login-web .password-field + .password-field { margin-top: 18px; }
+.login-web .toggle-password { height: 46px; }
+.login-web .login-button { height: 45px; min-height: 45px; display: flex; justify-content: space-between; margin-top: 20px; padding: 0 17px; border-radius: 8px; font-size: 12px; }
+.login-web .access-notice { margin-top: 24px; padding: 20px 0 0; border: 0; border-top: 1px solid var(--border-color); border-radius: 0; background: transparent; align-items: flex-start; gap: 10px; }
+.login-web .access-notice p { font-size: 11px; line-height: 1.7; }
+.login-web .access-notice .notice-icon { color: var(--text-secondary); width: 16px; flex-shrink: 0; }
+.login-web .form-footer { display: flex; align-items: center; gap: 10px; margin-top: 24px; padding: 0; border: 0; text-align: left; font-size: 10px; color: var(--text-secondary); }
+.login-web-footer { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 38px; border-top: 1px solid var(--border-color); color: var(--text-secondary); font-size: 10px; }
+.login-web-footer b { margin: 0 8px; font-weight: 400; }
+@media (max-height: 760px) {
+  .login-page.login-web { grid-template-rows: 72px minmax(0, 1fr) 40px; }
+  .login-web .login-theme-control { top: 17px; }
+  .login-web .brand-panel { padding: 24px 32px; }
+  .login-web .form-panel { padding: 24px 28px; }
+  .login-web-story h1 { font-size: 34px; margin: 20px 0 16px; }
+  .login-web-features, .login-web-summary { margin-top: 28px; }
+  .login-web .description { margin-bottom: 22px; }
+  .login-web .access-notice { margin-top: 20px; padding-top: 16px; }
+  .login-web .form-footer { margin-top: 18px; }
+}
+@media (max-width: 760px) {
+  .login-page.login-web { grid-template-columns: 1fr; }
+  .login-web .brand-panel { display: none; }
+  .login-web .form-panel { grid-column: 1; }
+  .login-web-header { padding: 0 20px; }
+  .login-web .login-theme-control { right: 16px; }
+  .login-web-header .brand { gap: 8px; }
+  .login-web-header .brand .brand-name { font-size: 16px; }
+  .login-web-header .brand > svg { width: 28px; }
+  .login-web-footer { padding: 0 16px; font-size: 9px; }
+}

@@ -1,0 +1,861 @@
+/* ========================================
+   ESTRUTURA GERAL
+   ======================================== */
+
+.hub-layout {
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--app-bg, #f3f6fa);
+  color: var(--text-primary, #1e293b);
+}
+
+/* ========================================
+   BARRA LATERAL
+   ======================================== */
+
+.hub-sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 250px;
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+  padding: 42px 15px 16px;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at 15% 15%, #244c82 0, transparent 34%),
+    linear-gradient(145deg, #0c1b31, #17365d 72%, #1c467b);
+  color: #eaf2fb;
+  z-index: 10;
+}
+
+/* ========================================
+   MARCA
+   ======================================== */
+
+.hub-brand {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 3px 8px 22px;
+  color: #ffffff;
+}
+
+.hub-brand strong,
+.hub-brand span,
+.hub-user strong,
+.hub-user span {
+  display: block;
+}
+
+.hub-brand strong {
+  font-size: 17px;
+  font-weight: 750;
+  letter-spacing: -0.3px;
+}
+
+.hub-brand > div > span {
+  margin-top: 4px;
+  color: #a8bfd8;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.hub-brand strong .hub-brand-highlight {
+  display: inline;
+  margin-top: 0;
+  color: #83b5ff;
+  font-size: inherit;
+  font-weight: 500;
+  letter-spacing: inherit;
+}
+
+/* ========================================
+   NAVEGAÇÃO
+   ======================================== */
+
+.hub-nav-label {
+  padding: 0 10px;
+  margin-bottom: 10px;
+  color: #91abc7;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hub-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hub-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 11px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #cbd9e8;
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+}
+
+.hub-nav-item.active {
+  background: #244c76;
+  color: #ffffff;
+}
+
+.hub-nav-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.68;
+}
+
+/* ========================================
+   RODAPÉ DA BARRA LATERAL
+   ======================================== */
+
+.hub-sidebar-footer {
+  margin-top: auto;
+  padding-top: 12px;
+  flex-shrink: 0;
+}
+
+.hub-sidebar-theme { display: flex; align-items: center; gap: 10px; width: 100%; margin-bottom: 14px; }
+.hub-sidebar-theme-toggle { display: grid; place-items: center; flex-shrink: 0; width: 34px; height: 34px; padding: 0; border: 1px solid #ffffff26; border-radius: 50%; background: transparent; color: #aabbd1; cursor: pointer; }
+.hub-sidebar-theme-toggle svg { width: 18px; height: 18px; }
+.hub-sidebar-theme-options { display: flex; flex: 1; min-width: 0; height: 36px; box-sizing: border-box; padding: 3px; border: 1px solid #ffffff14; border-radius: 6px; background: #00000020; }
+.hub-sidebar-theme-options button { flex: 1; min-width: 0; padding: 0 8px; border: 0; border-radius: 4px; background: transparent; color: #aabbd1; font: inherit; font-size: 12px; line-height: 1; cursor: pointer; }
+.hub-sidebar-theme-options button.selected { background: #ffffff0e; color: #fff; font-weight: 600; }
+.hub-sidebar-theme button:focus-visible { outline: 2px solid #93c5fd; outline-offset: 2px; }
+.hub-layout-collapsed .hub-sidebar-theme { justify-content: center; }
+.hub-layout-collapsed .hub-sidebar-theme-options { display: none; }
+
+.hub-environment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px;
+  color: #a8bfd8;
+  font-size: 10px;
+}
+
+.hub-version { position: relative; width: 100%; box-sizing: border-box; border: 0; border-radius: 6px; background: transparent; font-family: inherit; cursor: pointer; text-align: left; }
+.hub-version:hover { color: #eaf2fb; background: #ffffff0b; }
+.hub-version:focus-visible { outline: 2px solid #83b5ff; outline-offset: 2px; }
+.hub-update-dot { width: 6px; height: 6px; border-radius: 50%; flex: none; background: #4adeb2; }
+.hub-layout-collapsed .hub-version { flex-direction: column; gap: 4px; padding: 8px 0; font-size: 9px; }
+.hub-layout-collapsed .hub-version .hub-update-dot { position: absolute; top: 5px; right: 9px; }
+.hub-update-notice { display: flex; align-items: center; gap: 11px; margin-bottom: 14px; padding: 10px 12px; border: 1px solid var(--accent-border); border-radius: 7px; color: var(--qh-text); background: var(--accent-bg); }
+.hub-update-notice > svg { color: var(--qh-cockpit-subtext); flex: none; }
+.hub-update-notice > div { flex: 1; min-width: 0; }
+.hub-update-notice strong { display: block; font-size: 11px; font-weight: 600; overflow-wrap: anywhere; }
+.hub-update-notice span { display: block; margin-top: 3px; font-size: 10px; color: var(--qh-cockpit-subtext); }
+.hub-update-notice > button { display: inline-flex; align-items: center; gap: 6px; flex: none; padding: 5px 8px; border: 1px solid var(--accent-border); border-radius: 5px; background: transparent; color: var(--qh-text); font: inherit; font-size: 10px; cursor: pointer; }
+.hub-update-notice > button:hover { background: var(--qh-cockpit-hover-bg); }
+@media (max-width: 550px) { .hub-update-notice { flex-wrap: wrap; } .hub-update-notice > button { margin-left: 28px; } }
+
+/* ========================================
+   CONTEÚDO PRINCIPAL
+   ======================================== */
+
+.hub-main {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  box-sizing: border-box;
+  margin-left: 250px;
+  padding: 30px 36px 18px;
+}
+
+/* ========================================
+   CABEÇALHO
+   ======================================== */
+
+.hub-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color, #dfe6ef);
+}
+
+.hub-header > div:first-child {
+  min-width: 0;
+  text-align: left;
+}
+
+.hub-header h1 {
+  margin: 0 0 5px;
+  font-size: 24px;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  text-align: left;
+  color: var(--text-primary, #10233f);
+}
+
+.hub-header p {
+  margin: 0;
+  color: var(--text-secondary, #68788c);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.hub-header-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   IDENTIFICAÇÃO DO USUÁRIO
+   ======================================== */
+
+.hub-user {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 12px;
+  border: 1px solid var(--border-color, #dfe6ef);
+  border-radius: 12px;
+  background: var(--surface, #ffffff);
+}
+
+.hub-avatar {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+  place-items: center;
+  border: 1px solid var(--border-color, #dfe6ef);
+  border-radius: 50%;
+  background: var(--surface, #ffffff);
+  color: var(--accent-color, #2864a5);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.hub-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hub-user-info strong {
+  color: var(--text-primary, #1e293b);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hub-user-info span {
+  color: var(--text-secondary, #68788c);
+  font-size: 11px;
+}
+
+/* ========================================
+   MENU DE PERFIL
+   ======================================== */
+
+.hub-profile-container {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.hub-profile-trigger {
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.hub-profile-trigger:hover,
+.hub-profile-trigger.menu-open {
+  border-color: var(--accent-color, #2864dc);
+}
+
+.hub-profile-chevron {
+  flex-shrink: 0;
+  color: var(--text-secondary, #68788c);
+  transition: color 0.2s, transform 0.2s;
+}
+
+.hub-profile-trigger.menu-open .hub-profile-chevron {
+  transform: rotate(180deg);
+}
+
+.hub-profile-menu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  z-index: 30;
+  width: 250px;
+  box-sizing: border-box;
+  padding: 12px;
+  border: 1px solid var(--border-color, #dfe6ef);
+  border-radius: 12px;
+  background: var(--surface, #ffffff);
+  color: var(--text-primary, #1e293b);
+  box-shadow: 0 12px 36px rgb(15 35 65 / 16%);
+  animation: hub-menu-appear 0.16s ease-out;
+}
+
+@keyframes hub-menu-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hub-profile-menu-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 4px 8px;
+}
+
+.hub-profile-menu-header .hub-avatar {
+  width: 34px;
+  height: 34px;
+}
+
+.hub-menu-divider {
+  height: 1px;
+  margin: 6px 0;
+  background: var(--border-color, #dfe6ef);
+}
+
+.hub-menu-section {
+  padding: 3px 2px;
+}
+
+.hub-menu-section-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-primary, #1e293b);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hub-menu-section-title svg {
+  color: var(--accent-color, #2864dc);
+}
+
+.hub-menu-description {
+  display: block;
+  margin: 5px 0 8px;
+  color: var(--text-secondary, #68788c);
+  font-size: 11px;
+}
+
+/* Opções de tema */
+
+.hub-theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 7px;
+}
+
+.hub-theme-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  min-width: 0;
+  padding: 8px 4px;
+  border: 1px solid var(--border-color, #dfe6ef);
+  border-radius: 9px;
+  background: var(--surface, #ffffff);
+  color: var(--text-secondary, #68788c);
+  font: inherit;
+  font-size: 11px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+
+.hub-theme-option:hover {
+  border-color: var(--accent-color, #2864dc);
+}
+
+.hub-theme-option.selected {
+  border-color: var(--accent-color, #2864dc);
+  background: var(--app-bg, #f5f7fb);
+  color: var(--accent-color, #2864dc);
+  font-weight: 700;
+}
+
+/* Itens do menu */
+
+.hub-profile-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-primary, #1e293b);
+  text-align: left;
+  font: inherit;
+  font-size: 12px;
+}
+
+.hub-profile-menu-item:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.hub-profile-menu-item:not(:disabled) {
+  cursor: pointer;
+}
+
+.hub-profile-menu-item:not(:disabled):hover {
+  background: var(--app-bg, #f5f7fb);
+}
+
+.hub-profile-menu-item > svg {
+  flex-shrink: 0;
+}
+
+.hub-coming-soon {
+  margin-left: auto;
+  color: var(--text-secondary, #68788c);
+  font-size: 10px;
+}
+
+.hub-profile-logout {
+  color: #dc4545;
+}
+
+.hub-profile-logout:hover {
+  background: rgb(220 69 69 / 8%);
+}
+
+/* ========================================
+   RODAPÉ DA PÁGINA
+   ======================================== */
+
+.hub-page-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: auto;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-color, #dfe6ef);
+  color: var(--text-secondary, #68788c);
+  font-size: 10px;
+}
+
+/* ========================================
+   MENU LATERAL RETRÁTIL
+   ======================================== */
+
+.hub-sidebar,
+.hub-main {
+  transition:
+    width 0.22s ease,
+    margin-left 0.22s ease;
+}
+
+.hub-brand-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.hub-brand-identity > svg {
+  flex-shrink: 0;
+}
+
+.hub-brand-text {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.hub-brand-text > span {
+  display: block;
+  margin-top: 4px;
+  color: #a8bfd8;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.hub-sidebar-toggle {
+  display: grid;
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgb(191 214 245 / 20%);
+  border-radius: 7px;
+  background: rgb(255 255 255 / 4%);
+  color: #cbd9e8;
+  cursor: pointer;
+}
+
+.hub-sidebar-toggle:hover {
+  background: rgb(255 255 255 / 10%);
+  color: #ffffff;
+}
+
+.hub-sidebar-toggle:focus-visible {
+  outline: 2px solid #83b5ff;
+  outline-offset: 2px;
+}
+
+/* Menu recolhido */
+
+.hub-layout-collapsed .hub-sidebar {
+  width: 72px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.hub-layout-collapsed .hub-main {
+  margin-left: 72px;
+}
+
+.hub-layout-collapsed .hub-brand {
+  justify-content: center;
+  padding: 3px 0 22px;
+}
+
+.hub-layout-collapsed .hub-brand-identity {
+  display: flex;
+  justify-content: center;
+}
+
+.hub-layout-collapsed .hub-brand {
+  flex-direction: column;
+  gap: 16px;
+}
+
+.hub-layout-collapsed .hub-nav-label {
+  visibility: hidden;
+}
+
+.hub-layout-collapsed .hub-nav-item {
+  justify-content: center;
+  padding: 12px 0;
+}
+
+.hub-layout-collapsed .hub-nav-item > span {
+  display: none;
+}
+
+.hub-layout-collapsed .hub-nav-item > svg {
+  flex-shrink: 0;
+}
+
+.hub-layout-collapsed .hub-environment {
+  justify-content: center;
+  padding: 10px 0;
+}
+
+.hub-layout-collapsed .hub-environment > svg {
+  flex-shrink: 0;
+}
+
+.hub-layout-collapsed .hub-environment > span {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hub-sidebar,
+  .hub-main {
+    transition: none;
+  }
+}
+
+/* ========================================
+   TELAS MÉDIAS
+   ======================================== */
+
+@media (min-width: 651px) and (max-width: 900px) {
+  .hub-sidebar {
+    width: 205px;
+  }
+
+  .hub-main {
+    margin-left: 205px;
+    padding: 24px;
+  }
+
+  .hub-layout-collapsed .hub-sidebar {
+    width: 72px;
+  }
+
+  .hub-layout-collapsed .hub-main {
+    margin-left: 72px;
+  }
+
+  .hub-user-info {
+    display: none;
+  }
+}
+
+/* ========================================
+   TELAS PEQUENAS
+   ======================================== */
+
+@media (max-width: 650px) {
+  .hub-layout { display: flex; flex-direction: column; }
+  .hub-sidebar {
+    flex-shrink: 0;
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    overflow-y: visible;
+    padding: 15px 12px;
+  }
+
+  .hub-brand {
+    padding-bottom: 15px;
+  }
+
+  .hub-nav-label,
+  .hub-sidebar-footer {
+    display: none;
+  }
+
+  .hub-nav {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 3px;
+  }
+
+  .hub-nav-item {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 10px;
+  }
+
+  .hub-nav-item span {
+    white-space: nowrap;
+  }
+
+  .hub-main {
+    margin-left: 0;
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    padding: 22px 16px;
+  }
+
+  .hub-header h1 {
+    font-size: 24px;
+  }
+
+  .hub-header {
+    align-items: flex-start;
+    padding-bottom: 18px;
+  }
+
+  .hub-header-actions {
+    flex-wrap: wrap;
+  }
+
+  .hub-page-footer {
+    flex-direction: column;
+  }
+
+  .hub-profile-menu {
+    right: 0;
+    width: min(250px, calc(100vw - 32px));
+  }
+
+    .hub-layout-collapsed .hub-sidebar {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    padding: 15px 12px;
+  }
+
+  .hub-layout-collapsed .hub-main {
+    margin-left: 0;
+  }
+
+  .hub-layout-collapsed .hub-brand {
+    justify-content: center;
+    padding-bottom: 15px;
+  }
+
+  .hub-layout-collapsed .hub-nav {
+    flex-direction: row;
+  }
+
+  .hub-layout-collapsed .hub-nav-item {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 10px;
+  }
+
+  .hub-layout-collapsed .hub-nav-label,
+  .hub-layout-collapsed .hub-sidebar-footer {
+    display: none;
+  }
+}
+
+/* ========================================
+   AJUSTES DO MENU RECOLHIDO
+   ======================================== */
+
+@media (min-width: 651px) {
+
+  /* Evita rolagem horizontal */
+  .hub-layout-collapsed .hub-sidebar {
+    width: 72px;
+    padding: 16px 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  /* Remove o espaço reservado para a marca */
+  .hub-layout-collapsed .hub-brand {
+    justify-content: center;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  /* Remove o espaço reservado para o título */
+  .hub-layout-collapsed .hub-nav-label {
+    display: none;
+  }
+
+  /* Ícones começam logo abaixo do botão */
+  .hub-layout-collapsed .hub-nav {
+    gap: 6px;
+  }
+
+  .hub-layout-collapsed .hub-nav-item {
+    width: 100%;
+    min-width: 0;
+    height: 44px;
+    padding: 0;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  /* Centraliza os ícones */
+  .hub-layout-collapsed .hub-nav-item > svg {
+    flex-shrink: 0;
+  }
+
+  /* Centraliza o indicador do ambiente */
+  .hub-layout-collapsed .hub-sidebar-footer {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .hub-layout-collapsed .hub-environment {
+    width: 100%;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+}
+
+/* Compactação apenas na página da Central de Revisão.
+   Não altera Home, perfil nem demais módulos. */
+@media (min-width: 901px) {
+  .hub-main:has(.central-revisao) .hub-page-footer {
+    padding-top: 10px;
+  }
+}
+
+/* Perfil no rodapé da navegação — sem CSS adicional. */
+.hub-sidebar-profile {
+  width: 100%;
+  min-width: 0;
+  margin-bottom: 9px;
+}
+.hub-sidebar-profile .hub-profile-trigger {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 0;
+  gap: 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: transparent;
+  color: #eaf2fb;
+}
+.hub-sidebar-profile .hub-profile-trigger:hover,
+.hub-sidebar-profile .hub-profile-trigger.menu-open {
+  background: rgb(255 255 255 / 5%);
+  border-color: transparent;
+}
+.hub-sidebar-profile .hub-avatar {
+  width: 34px;
+  height: 34px;
+  font-size: 12px;
+  background: #254b79;
+  border-color: rgb(191 214 245 / 20%);
+  color: #fff;
+}
+.hub-sidebar-profile .hub-user-info { min-width: 0; flex: 1; }
+.hub-sidebar-profile .hub-user-info strong { color: #fff; font-size: 13px; line-height: 1.5; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.hub-sidebar-profile .hub-user-info span { color: #b4c8df; font-size: 12px; line-height: 1.5; }
+.hub-sidebar-profile .hub-profile-chevron { display: none; }
+/* O painel abre para cima e fica fora do fluxo da sidebar. */
+.hub-sidebar-profile .hub-profile-menu {
+  position: fixed;
+  top: auto;
+  bottom: 104px;
+  left: 15px;
+  right: auto;
+  width: 250px;
+  max-height: min(440px, calc(100dvh - 120px));
+  overflow-y: auto;
+  z-index: 100;
+}
+.hub-sidebar-profile .hub-profile-menu .hub-user-info strong { color: var(--text-primary, #1e293b); max-width: none; }
+.hub-sidebar-profile .hub-profile-menu .hub-user-info span { color: var(--text-secondary, #68788c); }
+.hub-sidebar-profile .hub-profile-menu .hub-avatar { background: var(--surface, #fff); color: var(--accent-color, #2864a5); }
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger { justify-content: center; padding: 7px 0; border-color: transparent; background: transparent; box-shadow: none; }
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger:hover,
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger.menu-open { border-color: transparent; background: transparent; }
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger > .hub-avatar { transition: background-color .2s ease, border-color .2s ease; }
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger:hover > .hub-avatar,
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger.menu-open > .hub-avatar { background: #355f92; border-color: #83b5ff; }
+.hub-layout-collapsed .hub-sidebar-profile .hub-profile-menu { left: 80px; bottom: 48px; }
+@media (min-width: 651px) and (max-width: 900px) {
+  .hub-sidebar-profile .hub-user-info { display: flex; }
+}
+@media (max-width: 650px) {
+  .hub-sidebar-footer, .hub-layout-collapsed .hub-sidebar-footer { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding-top: 8px; }
+  .hub-sidebar-profile { width: auto; margin-bottom: 0; }
+  .hub-sidebar-profile .hub-profile-trigger { width: auto; }
+  .hub-sidebar-profile .hub-profile-menu, .hub-layout-collapsed .hub-sidebar-profile .hub-profile-menu { left: 12px; bottom: auto; top: 118px; width: min(250px, calc(100vw - 24px)); }
+  .hub-layout-collapsed .hub-sidebar-profile .hub-profile-trigger { padding: 7px; }
+}

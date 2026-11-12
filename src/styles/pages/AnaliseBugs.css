@@ -1,0 +1,440 @@
+@import "../patterns/QualityHubTables.css";
+.analise-bugs {
+  display: grid;
+  gap: 12px;
+  min-width: 0;
+  font-family: inherit;
+  font-size: 12px;
+  color: var(--qh-text, #eaf0f8);
+}
+/* Filtros */
+.analise-bugs-filtros {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 190px 190px;
+  gap: 12px;
+  align-items: end;
+  min-width: 0;
+  margin-top: 0;
+}
+/* Tabela */
+.analise-bugs-tabela-scroll {
+  overflow-x: auto;
+}
+.analise-bugs-tabela {
+  min-width: 1100px;
+  color: var(--qh-text, #eaf0f8);
+}
+/* Estilos específicos dos links e ações */
+.analise-bugs-tabela a,
+.analise-bugs-link {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.analise-bugs-tabela button {
+  border: 1px solid var(--qh-border, #334155);
+  border-radius: 6px;
+  padding: 6px 9px;
+  background: transparent;
+  color: inherit;
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.analise-bugs-tabela button:hover {
+  background: var(--qh-surface-hover, #202c3b);
+}
+.analise-bugs-vazio {
+  text-align: center !important;
+  padding: 22px !important;
+  color: var(--qh-muted, #94a3b8);
+}
+/* Painel de detalhes */
+.analise-bugs-painel {
+  display: grid;
+  gap: 14px;
+  padding: 15px;
+  min-width: 0;
+  background: var(--qh-input, #182333);
+  border: 1px solid var(--qh-border, #334155);
+  border-radius: 7px;
+}
+.analise-bugs-painel-cabecalho {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+.analise-bugs-painel-cabecalho strong {
+  font-size: 12px;
+}
+.analise-bugs-painel-cabecalho p {
+  margin: 9px 0 0;
+  font-size: 12px;
+  color: var(--qh-muted, #94a3b8);
+}
+.analise-bugs-painel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+.analise-bugs-painel-grid > div {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+}
+.analise-bugs-painel-grid span:not(.analise-bugs-painel-badge):not(.analise-bugs-sla) {
+  font-size: 11px;
+  opacity: .75;
+}
+/* O badge do SLA não é um rótulo secundário: mantém contraste integral. */
+.analise-bugs-painel-grid .analise-bugs-sla {
+  opacity: 1;
+}
+
+.analise-bugs-painel-grid strong {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+.analise-bugs-parent-resumo {
+  margin: 0;
+  font-size: 12px;
+  color: var(--qh-muted, #94a3b8);
+}
+.analise-bugs-link {
+  font-size: 12px;
+  justify-self: start;
+}
+/* SLA */
+.analise-bugs-sla {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  white-space: nowrap;
+}
+.analise-bugs-sla--dentro {
+  color: #6ee7b7;
+  background: rgba(16, 185, 129, .12);
+}
+.analise-bugs-sla--limite {
+  color: #fbbf24;
+  background: rgba(245, 158, 11, .12);
+}
+.analise-bugs-sla--estourado {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, .12);
+}
+.analise-bugs-sla--sem_dados {
+  color: inherit;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+}
+/* Distribuição por status utilizada no Resumo */
+.analise-bugs-status-lista {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+.analise-bugs-status {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 7px 12px;
+  padding: 9px 11px;
+  min-width: 0;
+  border: 1px solid var(--qh-border, #334155);
+  border-radius: 7px;
+}
+.analise-bugs-status span {
+  font-size: 11px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.analise-bugs-status strong {
+  font-size: 12px;
+}
+.analise-bugs-barra {
+  grid-column: 1 / -1;
+  height: 4px;
+  border-radius: 5px;
+  background: #101923;
+  overflow: hidden;
+}
+.analise-bugs-barra > div {
+  height: 100%;
+  border-radius: inherit;
+  background: #648ac7;
+}
+/* Responsividade */
+@media (max-width: 950px) {
+.analise-bugs-status-lista {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 680px) {
+.analise-bugs-filtros {
+    grid-template-columns: minmax(0, 1fr);
+  }
+.analise-bugs-rodape {
+  flex-direction: column;
+}
+.analise-bugs-painel-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 420px) {
+.analise-bugs-status-lista,
+  .analise-bugs-painel-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+/* Seleção e ações — mesmo padrão da Cobertura */
+.analise-bugs-tabela input[type="checkbox"] {
+  accent-color: #e7aa36;
+}
+.analise-bugs-tabela th:first-child { width: 36px; }
+/* Larguras proporcionais no desktop; o resumo recebe o espaço restante. */
+.analise-bugs-tabela th:nth-child(2) { width: 9%; }
+.analise-bugs-tabela th:nth-child(3) { width: 40%; }
+.analise-bugs-tabela th:nth-child(4) { width: 8%; }
+.analise-bugs-tabela th:nth-child(5) { width: 8%; }
+.analise-bugs-tabela th:nth-child(6) { width: 8%; }
+.analise-bugs-tabela th:nth-child(7) { width: 14%; }
+.analise-bugs-tabela th:nth-child(8) { width: 8%; }
+.analise-bugs-tabela th:nth-child(9) { width: 5%; }
+.analise-bugs-tabela th:nth-child(8),
+.analise-bugs-tabela td:nth-child(8) { text-align: left; }
+.analise-bugs-tabela td:nth-child(7) { overflow: visible; }
+.analise-bugs-tabela th:last-child,
+.analise-bugs-tabela td:last-child { text-align: center; overflow: visible; }
+.analise-bugs-tabela td:last-child > button {
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--qh-text);
+}
+.analise-bugs-selecao-acoes {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--qh-input, #182333);
+  border: 1px solid var(--qh-border, #334155);
+  border-radius: 7px;
+  font-size: 12px;
+}
+.analise-bugs-selecao-acoes button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 10px;
+  background: var(--qh-surface, #202b3b);
+  border: 1px solid var(--qh-border, #334155);
+  border-radius: 6px;
+  color: var(--qh-text);
+  font-size: 12px;
+  cursor: pointer;
+}
+.analise-bugs-selecao-acoes button:disabled,
+.analise-bugs-menu-acoes button:disabled { opacity: .45; cursor: not-allowed; }
+.analise-bugs-menu-acoes {
+  min-width: 190px;
+  padding: 5px;
+  background: var(--qh-surface, #202b3b);
+  border: 1px solid var(--qh-border, #334155);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgb(0 0 0 / 30%);
+  color: var(--qh-text);
+}
+.analise-bugs-menu-acoes button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 9px 10px;
+  text-align: left;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.analise-bugs-menu-acoes button:hover:not(:disabled) { background: var(--qh-surface-hover, #334155); }
+/* Alinhamento do rodapé com a Cobertura de Testes */
+
+/* Trilho da distribuição por status no tema claro. */
+:root[data-theme="light"] .analise-bugs-barra { background: #dbe4f0; }
+:root[data-theme="light"] .analise-bugs-barra > div { background: #346bbd; }
+
+/* Mesmo badge na tabela e no detalhe, inclusive quando o tema claro é automático. */
+:root:not([data-theme="dark"]) .analise-bugs-sla--dentro { color: var(--qh-success-text); background: var(--qh-success-bg); font-weight: 400; }
+:root:not([data-theme="dark"]) .analise-bugs-sla--limite { color: var(--qh-warning-text); background: var(--qh-warning-bg); font-weight: 400; }
+:root:not([data-theme="dark"]) .analise-bugs-sla--estourado { color: var(--qh-danger-text); background: var(--qh-danger-bg); font-weight: 400; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .analise-bugs-sla--dentro { color: #6ee7b7; background: rgba(16,185,129,.12); }
+  :root:not([data-theme]) .analise-bugs-sla--limite { color: #fbbf24; background: rgba(245,158,11,.12); }
+  :root:not([data-theme]) .analise-bugs-sla--estourado { color: #fca5a5; background: rgba(239,68,68,.12); }
+}
+
+/* Detalhes do defeito: superfície e hierarquia no tema claro. */
+:root[data-theme="light"] .analise-bugs-painel {
+  background: #f8fafd;
+  border-color: #b9cadd;
+  box-shadow: 0 1px 3px rgb(16 42 76 / 5%);
+}
+:root[data-theme="light"] .analise-bugs-painel-cabecalho > strong {
+  color: #183657;
+  font-weight: 600;
+}
+:root[data-theme="light"] .analise-bugs-painel-grid span:not(.analise-bugs-painel-badge):not(.analise-bugs-sla) {
+  color: #536780;
+  opacity: 1;
+}
+:root[data-theme="light"] .analise-bugs-painel-grid strong {
+  color: #243c58;
+  font-weight: 600;
+}
+:root[data-theme="light"] .analise-bugs-painel-grid .analise-bugs-sla {
+  font-weight: 400;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla {
+    font-weight: 400;
+  }
+}
+
+/* Proteção do painel de defeitos no tema escuro, sem afetar o light. */
+:root[data-theme="dark"] .analise-bugs-painel {
+  background: var(--qh-input, #182333);
+  border-color: var(--qh-border, #334155);
+  box-shadow: none;
+}
+:root[data-theme="dark"] .analise-bugs-painel-cabecalho > strong,
+:root[data-theme="dark"] .analise-bugs-painel-grid strong { color: inherit; font-weight: 700; }
+:root[data-theme="dark"] .analise-bugs-painel-grid span:not(.analise-bugs-painel-badge):not(.analise-bugs-sla) { color: inherit; opacity: .75; }
+:root[data-theme="dark"] .analise-bugs-painel-grid .analise-bugs-sla { opacity: 1; font-weight: 500; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .analise-bugs-painel { background: var(--qh-input, #182333); border-color: var(--qh-border, #334155); box-shadow: none; }
+  :root:not([data-theme]) .analise-bugs-painel-cabecalho > strong,
+  :root:not([data-theme]) .analise-bugs-painel-grid strong { color: inherit; font-weight: 700; }
+  :root:not([data-theme]) .analise-bugs-painel-grid span:not(.analise-bugs-painel-badge):not(.analise-bugs-sla) { color: inherit; opacity: .75; }
+  :root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla { opacity: 1; font-weight: 500; }
+}
+
+/* O seletor do painel para spans não deve substituir as cores do SLA. */
+:root[data-theme="light"] .analise-bugs-painel-grid .analise-bugs-sla--dentro,
+:root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla--dentro {
+  color: var(--qh-success-text);
+}
+:root[data-theme="light"] .analise-bugs-painel-grid .analise-bugs-sla--limite,
+:root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla--limite {
+  color: var(--qh-warning-text);
+}
+:root[data-theme="light"] .analise-bugs-painel-grid .analise-bugs-sla--estourado,
+:root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla--estourado {
+  color: var(--qh-danger-text);
+}
+:root[data-theme="dark"] .analise-bugs-painel-grid .analise-bugs-sla--dentro { color: #6ee7b7; }
+:root[data-theme="dark"] .analise-bugs-painel-grid .analise-bugs-sla--limite { color: #fbbf24; }
+:root[data-theme="dark"] .analise-bugs-painel-grid .analise-bugs-sla--estourado { color: #fca5a5; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla--dentro { color: #6ee7b7; }
+  :root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla--limite { color: #fbbf24; }
+  :root:not([data-theme]) .analise-bugs-painel-grid .analise-bugs-sla--estourado { color: #fca5a5; }
+}
+
+/* Notebook: preserva SLA e Ações sem rolagem horizontal.
+   Parent continua acessível no painel de detalhes do defeito. */
+@media (min-width: 681px) and (max-width: 1400px) {
+  .analise-bugs .analise-bugs-tabela {
+    width: 100%;
+    min-width: 0;
+    table-layout: fixed;
+  }
+
+  .analise-bugs .analise-bugs-tabela th:nth-child(8),
+  .analise-bugs .analise-bugs-tabela td:nth-child(8) {
+    display: none;
+  }
+
+  .analise-bugs .analise-bugs-tabela th:first-child { width: 36px; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(2) { width: 100px; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(3) { width: auto; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(4) { width: 82px; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(5) { width: 85px; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(6) { width: 80px; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(7) { width: 170px; }
+  .analise-bugs .analise-bugs-tabela th:nth-child(9) { width: 58px; }
+
+  .analise-bugs .analise-bugs-tabela .analise-bugs-resumo,
+  .analise-bugs .analise-bugs-tabela .analise-bugs-resumo .revisao-resumo {
+    min-width: 0;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+/* Badges semânticos do painel: cores compartilhadas em QualityHubBadges.css. */
+.analise-bugs-painel-grid .analise-bugs-painel-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-self: start;
+  width: fit-content;
+  max-width: 100%;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  opacity: 1;
+}
+
+/* Prioridade: mesma paleta semântica compartilhada no painel e na tabela. */
+.analise-bugs-tabela .analise-bugs-prioridade-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  max-width: 100%;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 16px;
+  white-space: nowrap;
+}
+
+/* Painel de detalhes — distribuição responsiva */
+
+@media (min-width: 1601px) {
+  .analise-bugs-painel-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 681px) and (max-width: 1100px) {
+  .analise-bugs-painel-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  .analise-bugs-painel-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

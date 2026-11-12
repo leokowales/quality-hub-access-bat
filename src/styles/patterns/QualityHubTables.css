@@ -1,0 +1,294 @@
+/* QUALITYHUB — Fonte única da estrutura das três tabelas.
+   Somente diferenças de conteúdo e larguras de colunas ficam nos CSS das páginas. */
+.qh-tabela-filtros {
+    margin-bottom: 0;
+}
+
+.qh-tabela-scroll {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-x: auto;
+    border: 1px solid var(--qh-border, #334155);
+    border-radius: 7px;
+    background: var(--qh-table, #101923);
+    margin: 0;
+}
+
+.qh-tabela {
+    --qh-row-height: 38px;
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    font-family: var(--sans, system-ui, 'Segoe UI', Roboto, sans-serif);
+    font-size: 12px;
+    color: var(--qh-text, #eaf0f8);
+}
+
+.qh-tabela th,
+.qh-tabela td {
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid var(--qh-border, #334155);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.qh-tabela th {
+    height: 46px;
+    padding: 10px 9px;
+    box-sizing: border-box;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 18px;
+    background: var(--qh-surface, #202b3b);
+    color: var(--qh-text, #eaf0f8);
+}
+
+.qh-tabela tbody tr {
+    height: var(--qh-row-height);
+    background: var(--qh-table, #101923);
+}
+
+.qh-tabela tbody tr:hover {
+    background: var(--qh-surface-hover, #202c3b);
+}
+
+.qh-tabela tbody td {
+    height: var(--qh-row-height);
+    min-height: 0;
+    max-height: var(--qh-row-height);
+    padding: 0 9px;
+    box-sizing: border-box;
+    font-size: 11.8px;
+    line-height: 18px;
+    color: var(--qh-text, #eaf0f8);
+}
+
+.qh-tabela tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.qh-tabela td svg {
+    vertical-align: middle;
+}
+
+.qh-tabela input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    accent-color: #e7aa36;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+.qh-tabela tbody td>button {
+    max-height: 28px;
+    margin-block: 0;
+    font-family: inherit;
+    font-size: 12px;
+    line-height: 18px;
+    vertical-align: middle;
+}
+
+.qh-tabela .revisao-badge,
+.qh-tabela [class*="revisao-decisao-"],
+.qh-tabela .analise-bugs-sla {
+    margin-block: 0;
+    padding-block: 2px;
+    line-height: 16px;
+    vertical-align: middle;
+}
+
+.qh-tabela-rodape {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 3px 2px 4px;
+    margin: 0;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--qh-muted, #94a3b8);
+}
+
+.qh-paginacao {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    flex-wrap: wrap;
+    font-family: inherit;
+    transform: none;
+}
+
+.qh-paginacao label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-right: 10px;
+    white-space: nowrap;
+}
+
+.qh-paginacao label>span {
+    display: inline;
+    transform: none;
+}
+
+.qh-paginacao select,
+.qh-paginacao button {
+    height: 32px;
+    box-sizing: border-box;
+    border: 1px solid var(--qh-border, #334155);
+    border-radius: 6px;
+    background-color: var(--qh-surface-hover, #202c3b);
+    color: var(--qh-text, #eaf0f8);
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.qh-paginacao select {
+    width: 64px;
+    padding: 0 28px 0 12px;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23cbd5e1' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 9px center;
+    background-size: 14px;
+    cursor: pointer;
+}
+
+.qh-paginacao button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    min-width: 32px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.qh-paginacao button:disabled {
+    opacity: .35;
+    cursor: default;
+}
+
+.qh-paginacao>span {
+    min-width: 75px;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    transform: none;
+}
+
+.qh-tabela .revisao-resumo {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    text-decoration: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.qh-tabela .revisao-resumo:hover,
+.qh-tabela .revisao-chave:hover {
+    color: #8cb9ff;
+}
+
+.qh-tabela .revisao-chave {
+    color: inherit;
+    text-decoration: none;
+}
+
+.qh-tabela a.revisao-chave {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+/* Layout compartilhado: filtros, tabela e paginação */
+.qh-tabela-layout {
+    display: grid;
+    gap: 12px;
+    min-width: 0;
+}
+/* Refinamento de superfície da tabela — apenas tema claro.
+   Não modifica estados semânticos (badges/SLA) nem o tema escuro. */
+:root[data-theme="light"] .qh-tabela-scroll {
+  border-color: #b9cadd;
+  box-shadow: 0 1px 2px rgb(16 42 76 / 4%);
+}
+:root[data-theme="light"] .qh-tabela th {
+  background: #e8eef7;
+  color: #183657;
+  border-bottom-color: #b9cadd;
+}
+:root[data-theme="light"] .qh-tabela tbody tr:nth-child(even):not(:hover):not(.revisao-linha-ativa) {
+  background: #f8fafd;
+}
+:root[data-theme="light"] .qh-tabela tbody tr:hover,
+:root[data-theme="light"] .qh-tabela tbody tr.revisao-linha-ativa {
+  background: #e6eef8;
+}
+:root[data-theme="light"] .qh-tabela td {
+  border-bottom-color: #d5e0ed;
+}
+
+/* Hover refinado: mantém o contraste do texto e diferencia a seleção. */
+:root[data-theme="light"] .qh-tabela tbody tr:hover:not(.revisao-linha-ativa) {
+  background: #f0f5fb;
+}
+:root[data-theme="light"] .qh-tabela tbody tr.revisao-linha-ativa {
+  background: #e9f0f9;
+}
+:root[data-theme="light"] .qh-tabela .revisao-resumo:hover,
+:root[data-theme="light"] .qh-tabela .revisao-chave:hover,
+:root[data-theme="light"] .qh-tabela tbody tr:hover .revisao-resumo {
+  color: #102a4c;
+}
+
+/* Proteção do tema escuro: mantém os estados originais da tabela. */
+:root[data-theme="dark"] .qh-tabela-scroll { border-color: var(--qh-border, #334155); box-shadow: none; }
+:root[data-theme="dark"] .qh-tabela th { background: var(--qh-surface, #202b3b); color: var(--qh-text, #eaf0f8); border-bottom-color: var(--qh-border, #334155); }
+:root[data-theme="dark"] .qh-tabela tbody tr { background: var(--qh-table, #101923); }
+:root[data-theme="dark"] .qh-tabela tbody tr:hover { background: var(--qh-surface-hover, #202c3b); }
+:root[data-theme="dark"] .qh-tabela td { border-bottom-color: var(--qh-border, #334155); }
+:root[data-theme="dark"] .qh-tabela .revisao-resumo:hover,
+:root[data-theme="dark"] .qh-tabela .revisao-chave:hover { color: #8cb9ff; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) .qh-tabela-scroll { border-color: var(--qh-border, #334155); box-shadow: none; }
+  :root:not([data-theme]) .qh-tabela th { background: var(--qh-surface, #202b3b); color: var(--qh-text, #eaf0f8); border-bottom-color: var(--qh-border, #334155); }
+  :root:not([data-theme]) .qh-tabela tbody tr { background: var(--qh-table, #101923); }
+  :root:not([data-theme]) .qh-tabela tbody tr:hover { background: var(--qh-surface-hover, #202c3b); }
+  :root:not([data-theme]) .qh-tabela td { border-bottom-color: var(--qh-border, #334155); }
+  :root:not([data-theme]) .qh-tabela .revisao-resumo:hover,
+  :root:not([data-theme]) .qh-tabela .revisao-chave:hover { color: #8cb9ff; }
+}
+
+/* Alternância e seleção da tabela no tema escuro (referência visual original). */
+:root[data-theme="dark"] .qh-tabela tbody tr:nth-child(even):not(:hover):not(.revisao-linha-ativa) {
+    background: var(--qh-surface, #202b3b);
+}
+:root[data-theme="dark"] .qh-tabela tbody tr.revisao-linha-ativa {
+    background: var(--qh-surface, #202b3b);
+}
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .qh-tabela tbody tr:nth-child(even):not(:hover):not(.revisao-linha-ativa),
+    :root:not([data-theme]) .qh-tabela tbody tr.revisao-linha-ativa {
+        background: var(--qh-surface, #202b3b);
+    }
+}

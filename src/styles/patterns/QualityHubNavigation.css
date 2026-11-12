@@ -1,0 +1,117 @@
+/* Navegação interna compartilhada: Nova Iteração e Revisão dos Dados */
+.qh-internal-header {
+    margin-bottom: 0;
+}
+
+.qh-internal-breadcrumb,
+.revisao-dados-breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    color: var(--qh-muted);
+}
+
+.qh-internal-breadcrumb button,
+.revisao-dados-breadcrumb .qh-breadcrumb-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--accent-color);
+    font: inherit;
+    cursor: pointer;
+}
+
+.qh-internal-breadcrumb button:hover,
+.revisao-dados-breadcrumb .qh-breadcrumb-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.qh-internal-breadcrumb button:focus-visible,
+.revisao-dados-breadcrumb .qh-breadcrumb-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+.qh-internal-breadcrumb [aria-current="page"],
+.revisao-dados-breadcrumb [aria-current="page"] {
+    color: var(--qh-text);
+}
+
+.qh-internal-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+}
+
+.qh-internal-header-row > div:first-child {
+  min-width: 0;
+}
+
+.qh-internal-header-row h1 {
+    margin: 0 0 5px;
+    font-size: 20px;
+    line-height: 1.25;
+}
+
+.qh-internal-header-row p {
+    margin: 0;
+    color: var(--qh-muted);
+    font-size: 12px;
+}
+
+.qh-internal-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex-shrink: 0;
+    align-self: center;
+    padding: 11px 16px;
+    border: 1px solid var(--qh-border);
+    border-radius: 9px;
+    color: var(--qh-text);
+    background: transparent;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+}
+
+.qh-internal-back:hover {
+    background: var(--qh-surface-hover);
+}
+
+@media (max-width: 650px) {
+    .qh-internal-header-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .qh-internal-back {
+        align-self: flex-start;
+    }
+}
+/* Cabeçalhos internos: acomodação progressiva em notebooks. */
+@media (min-width: 651px) and (max-width: 1365px) {
+    .qh-internal-header-row {
+        gap: 16px;
+    }
+
+    .qh-internal-header-row h1 {
+        overflow-wrap: anywhere;
+    }
+
+    .qh-internal-breadcrumb,
+    .revisao-dados-breadcrumb {
+        flex-wrap: wrap;
+    }
+}

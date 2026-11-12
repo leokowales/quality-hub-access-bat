@@ -1,0 +1,142 @@
+
+/* ==========================================
+   QUALITYHUB — FILTROS
+   Padrão visual compartilhado entre abas.
+   Grids e breakpoints permanecem locais.
+   ========================================== */
+
+/* Estrutura dos campos */
+
+.qh-filtros > label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--qh-muted);
+  transform: none;
+}
+
+/* Rótulos */
+
+.qh-filtros > label > span:not(.qh-campo-busca) {
+  display: block;
+  margin: 0;
+  font: inherit;
+  line-height: 16px;
+  color: var(--qh-muted);
+  transform: none;
+}
+
+/* Campo de busca */
+
+.qh-filtros .qh-campo-busca {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  box-sizing: border-box;
+  border: 1px solid var(--qh-border);
+  border-radius: 6px;
+  background: var(--qh-input);
+  transform: none;
+}
+
+.qh-filtros .qh-campo-busca > svg {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+  transform: translateY(-50%);
+  color: var(--qh-muted);
+  pointer-events: none;
+}
+
+.qh-filtros .qh-campo-busca > input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  padding: 0 10px 0 31px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: inherit;
+  outline: none;
+  background: transparent;
+  color: var(--qh-text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.qh-filtros .qh-campo-busca > input::placeholder {
+  color: rgb(117, 117, 117);
+  opacity: 1;
+  font-weight: 400;
+}
+
+.qh-filtros .qh-campo-busca:focus-within {
+  outline: 2px solid #79aaff;
+  outline-offset: 1px;
+}
+
+/* Campos de seleção */
+
+.qh-filtros > label > select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  height: 34px;
+  padding: 0 32px 0 10px;
+  box-sizing: border-box;
+  border: 1px solid var(--qh-border);
+  border-radius: 6px;
+  appearance: none;
+  background-color: var(--qh-input);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 14px;
+  color: var(--qh-text);
+  font: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+  transform: none;
+}
+
+/* Foco dos campos */
+
+.qh-filtros > label > select:focus-visible {
+  outline: 2px solid #79aaff;
+  outline-offset: 1px;
+}
+
+/* Alinhamento responsivo da Cobertura */
+
+.qh-filtros .cobertura-filtro-situacao {
+  justify-self: stretch;
+  align-self: auto;
+  width: 100%;
+  transform: none;
+}
+
+/* Campos mais nítidos no tema claro, mantendo dimensões e foco acessível. */
+:root[data-theme="light"] .qh-filtros .qh-campo-busca,
+:root[data-theme="light"] .qh-filtros > label > select {
+  border-color: #b9cadd;
+  background-color: #fff;
+}
+:root[data-theme="light"] .qh-filtros .qh-campo-busca:focus-within,
+:root[data-theme="light"] .qh-filtros > label > select:focus-visible {
+  border-color: #527da8;
+  outline-color: #527da8;
+}
+:root[data-theme="light"] .qh-filtros .qh-campo-busca > input::placeholder {
+  color: #62758e;
+}

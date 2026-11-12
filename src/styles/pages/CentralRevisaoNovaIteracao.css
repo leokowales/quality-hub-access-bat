@@ -1,0 +1,66 @@
+/* Ações compactas no cabeçalho da Central de Revisão */
+.central-revisao-acoes-topo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 5px;
+    flex: 0 0 auto;
+    flex-wrap: nowrap;
+}
+
+.central-revisao-acoes-topo .central-revisao-contagem {
+  text-align: right;
+}
+
+.central-revisao-nova-iteracao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    padding: 8px 12px;
+    border: 1px solid #3976be;
+    border-radius: 7px;
+    background: #2865a9;
+    color: #fff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.2;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.central-revisao-nova-iteracao:hover {
+    background: #347ac6;
+}
+
+.central-revisao-nova-iteracao:focus-visible {
+    outline: 2px solid #76b7ff;
+    outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+    .central-revisao-acoes-topo {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/* Botão primário contemporâneo, apenas no tema light. */
+:root[data-theme="light"] .central-revisao-nova-iteracao {
+  background: #1e477c;
+  border-color: #1e477c;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(16, 42, 76, .12);
+}
+:root[data-theme="light"] .central-revisao-nova-iteracao:hover:not(:disabled) {
+  background: #16395f;
+  border-color: #16395f;
+}
+:root[data-theme="light"] .central-revisao-nova-iteracao:focus-visible {
+  outline-color: #7eabd8;
+}

@@ -1,0 +1,955 @@
+/* =========================================================
+   MEU QUALITY HUB — HOME
+   Complementa MeuQualityHub.css sem alterar o shell da aplicação.
+   ========================================================= */
+
+.hub-home {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Estado inicial — preserva o padrão existente */
+.hub-welcome {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: min(100%, 720px);
+    min-height: 390px;
+    box-sizing: border-box;
+    margin: 32px auto 35px;
+    padding: 42px 35px;
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 16px;
+    background: var(--surface, #ffffff);
+    text-align: center;
+    box-shadow: 0 5px 22px rgb(22 59 101 / 4%);
+}
+
+.hub-welcome-icon {
+    display: grid;
+    width: 62px;
+    height: 62px;
+    place-items: center;
+    margin-bottom: 23px;
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 17px;
+    background: var(--app-bg, #eaf3ff);
+    color: var(--accent-color, #2864a5);
+}
+
+.hub-section-label {
+    color: var(--accent-color, #2864a5);
+    font-size: 10px;
+    font-weight: 750;
+    letter-spacing: 1.2px;
+}
+
+.hub-welcome h2 {
+    margin: 13px 0 10px;
+    font-size: clamp(21px, 2.5vw, 27px);
+    letter-spacing: -0.6px;
+    color: var(--text-primary, #10233f);
+}
+
+.hub-welcome>p {
+    max-width: 475px;
+    margin: 0;
+    color: var(--text-secondary, #68788c);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.hub-primary-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 25px;
+    padding: 13px 20px;
+    border: 1px solid var(--accent-color, #2864a5);
+    border-radius: 9px;
+    background: var(--accent-color, #2864a5);
+    color: #fff;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: filter 0.2s, transform 0.2s;
+}
+
+.hub-primary-button:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+.hub-primary-button:focus-visible,
+.hub-home-refresh:focus-visible,
+.hub-home-iteration:focus-visible,
+.hub-home-view-all:focus-visible {
+    outline: 2px solid var(--accent-color, #2864a5);
+    outline-offset: 3px;
+}
+
+.hub-empty-note {
+    margin-top: 17px;
+    color: var(--text-secondary, #68788c);
+    font-size: 11px;
+}
+
+/* Visão geral — mesma largura, superfície e ritmo dos módulos */
+.hub-home-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 1480px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 28px 0 36px;
+}
+
+.hub-home-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    min-width: 0;
+}
+
+.hub-home-heading h2 {
+    margin: 7px 0 5px;
+    color: var(--text-primary, #10233f);
+    font-size: clamp(20px, 2vw, 24px);
+    font-weight: 750;
+    letter-spacing: -0.5px;
+    line-height: 1.3;
+}
+
+.hub-home-heading p {
+    margin: 0;
+    color: var(--text-secondary, #68788c);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.hub-home-refresh {
+    display: grid;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    place-items: center;
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 9px;
+    background: var(--surface, #fff);
+    color: var(--text-secondary, #68788c);
+    cursor: pointer;
+}
+
+.hub-home-refresh:hover:not(:disabled) {
+    color: var(--accent-color, #2864a5);
+    border-color: var(--accent-color, #2864a5);
+}
+
+.hub-home-refresh:disabled {
+    opacity: 0.5;
+    cursor: wait;
+}
+
+.hub-home-metrics {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.hub-home-metric,
+.hub-home-callout,
+.hub-home-iteration {
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 12px;
+    background: var(--surface, #fff);
+    box-shadow: 0 3px 14px rgb(22 59 101 / 3%);
+}
+
+.hub-home-metric {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 18px 20px;
+}
+
+.hub-home-metric span {
+    color: var(--text-secondary, #68788c);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hub-home-metric strong {
+    margin: 9px 0 5px;
+    color: var(--text-primary, #10233f);
+    font-size: 30px;
+    font-weight: 750;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+.hub-home-metric small {
+    color: var(--text-secondary, #68788c);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+/* A largura cresce com a janela, sem esticar excessivamente os painéis. */
+@media (max-width: 1599px) {
+    .hub-home-dashboard {
+        max-width: 1200px;
+    }
+}
+
+@media (min-width: 1600px) and (max-width: 1919px) {
+    .hub-home-dashboard {
+        max-width: 1320px;
+    }
+}
+
+/* Ação contextual, sem competir com o cabeçalho */
+.hub-home-callout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hub-home-callout>div {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    min-width: 0;
+}
+
+.hub-home-callout>div>svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--accent-color, #2864a5);
+}
+
+.hub-home-callout h3,
+.hub-home-list h3 {
+    margin: 0 0 6px;
+    color: var(--text-primary, #10233f);
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.hub-home-callout p {
+    max-width: 570px;
+    margin: 0;
+    color: var(--text-secondary, #68788c);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.hub-home-callout .hub-primary-button {
+    flex-shrink: 0;
+    margin-top: 0;
+    padding: 10px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Revisões recentes */
+.hub-home-list {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+    min-width: 0;
+}
+
+.hub-home-list>h3 {
+    margin: 2px 0 5px;
+}
+
+.hub-home-iteration {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    width: 100%;
+    min-width: 0;
+    padding: 14px 16px;
+    color: var(--text-primary, #10233f);
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.hub-home-iteration:hover {
+    border-color: var(--accent-color, #2864a5);
+    background: var(--app-bg, #f3f6fa);
+}
+
+.hub-home-iteration>svg:first-child {
+    flex-shrink: 0;
+    color: var(--accent-color, #2864a5);
+}
+
+.hub-home-iteration>svg:last-child {
+    flex-shrink: 0;
+    color: var(--text-secondary, #68788c);
+}
+
+.hub-home-iteration>span {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+}
+
+.hub-home-iteration strong {
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.hub-home-iteration small {
+    color: var(--text-secondary, #68788c);
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.hub-home-view-all {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 7px;
+    margin-top: 2px;
+    padding: 7px 0;
+    border: 0;
+    background: transparent;
+    color: var(--accent-color, #2864a5);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.hub-home-view-all:hover {
+    text-decoration: underline;
+}
+
+.hub-home-feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 12px;
+    min-height: 250px;
+    padding: 30px 16px;
+    color: var(--text-secondary, #68788c);
+    text-align: center;
+    font-size: 13px;
+}
+
+.hub-home-feedback p {
+    margin: 0;
+}
+.hub-home-feedback--consulta .qh-v3-query-error { width: min(100%, 460px); flex-direction: column; gap: 16px; padding: 20px; margin: 0; }
+.hub-home-feedback--consulta .qh-v3-query-copy { flex: 0 1 auto; gap: 8px; }
+.hub-home-feedback--consulta .qh-v3-query-copy strong { font-size: 14px; }
+.hub-home-feedback--consulta .qh-v3-query-copy span { font-size: 12px; max-width: 390px; }
+
+.hub-home-feedback .hub-primary-button {
+    margin-top: 5px;
+}
+
+@media (max-width: 800px) {
+    .hub-home-callout {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .hub-home-callout .hub-primary-button {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 650px) {
+    .hub-home-dashboard {
+        gap: 16px;
+        padding: 22px 0 30px;
+    }
+
+    .hub-home-metrics {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .hub-home-metric {
+        padding: 16px;
+    }
+
+    .hub-home-callout {
+        padding: 16px;
+    }
+
+    .hub-home-callout .hub-primary-button {
+        width: 100%;
+        white-space: normal;
+    }
+
+    .hub-home-iteration {
+        padding: 13px;
+    }
+
+    .hub-welcome {
+        min-height: 350px;
+        margin: 28px auto;
+        padding: 30px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hub-primary-button,
+    .hub-home-iteration {
+        transition: none;
+    }
+}
+
+/* Sprint Ativa — ações e confirmação */
+.hub-home-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.hub-home-actions .hub-primary-button {
+    margin-top: 0;
+}
+
+.hub-home-secondary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 9px 13px;
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 9px;
+    background: var(--surface, #fff);
+    color: var(--text-primary, #10233f);
+    font: inherit;
+    font-size: 12px;
+    font-weight: 650;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.hub-home-secondary:hover {
+    border-color: var(--accent-color, #2864a5);
+}
+
+.hub-home-secondary:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.hub-home-empty {
+    padding: 14px 16px;
+    margin: 0;
+    border: 1px dashed var(--border-color, #dfe6ef);
+    border-radius: 10px;
+    color: var(--text-secondary, #68788c);
+    font-size: 12px;
+}
+
+.hub-home-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(10, 24, 43, .55);
+}
+
+.hub-home-modal {
+    width: min(100%, 440px);
+    padding: 24px;
+    box-sizing: border-box;
+    border-radius: 14px;
+    border: 1px solid var(--border-color, #dfe6ef);
+    background: var(--surface, #fff);
+    color: var(--text-primary, #10233f);
+    box-shadow: 0 16px 50px rgba(0, 0, 0, .16);
+}
+
+.hub-home-modal h3 {
+    margin: 0 0 15px;
+    font-size: 18px;
+}
+
+.hub-home-modal p {
+    color: var(--text-secondary, #68788c);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.hub-home-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.hub-home-modal-actions .hub-primary-button {
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   MEU QUALITY HUB — SELEÇÃO DE SPRINTS
+   Estado 2 — refinamento visual
+   ========================================================= */
+
+/* Largura e distribuição do conteúdo */
+.hub-home-dashboard.hub-home-selecao {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    padding: 30px 0 40px;
+    gap: 22px;
+}
+
+/* Cabeçalho */
+.hub-home-selecao .hub-home-heading {
+    margin-bottom: 2px;
+}
+
+.hub-home-selecao .hub-home-heading h2 {
+    margin-top: 9px;
+    margin-bottom: 5px;
+    font-size: 23px;
+    letter-spacing: -0.45px;
+}
+
+/* Painel principal das sprints */
+.hub-home-sprints-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 22px 24px;
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 12px;
+    background: var(--surface, #fff);
+    box-shadow: 0 3px 14px rgb(22 59 101 / 3%);
+}
+
+/* Seções internas */
+.hub-home-selecao .hub-home-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.hub-home-selecao .hub-home-list-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 5px;
+}
+
+.hub-home-selecao .hub-home-list-heading h3 {
+    margin: 0 0 5px;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.hub-home-selecao .hub-home-list-heading p {
+    margin: 0;
+    color: var(--text-secondary, #68788c);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* Contadores */
+.hub-home-selecao .hub-home-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    min-width: 26px;
+    height: 26px;
+    padding: 0 7px;
+    border: 1px solid var(--border-color, #dfe6ef);
+    border-radius: 999px;
+    background: var(--app-bg, #f3f6fa);
+    color: var(--text-secondary, #68788c);
+    font-size: 11px;
+    font-weight: 700;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Linhas das sprints */
+.hub-home-selecao .hub-home-iteration {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-height: 58px;
+    padding: 11px 14px;
+    border-radius: 9px;
+    box-shadow: none;
+    cursor: default;
+}
+
+.hub-home-selecao .hub-home-iteration:hover {
+    border-color: var(--border-color, #dfe6ef);
+    background: var(--surface, #fff);
+}
+
+.hub-home-selecao .hub-home-iteration > svg:first-child {
+    flex-shrink: 0;
+}
+
+.hub-home-selecao .hub-home-iteration > span {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 3px;
+    min-width: 0;
+}
+
+.hub-home-selecao .hub-home-iteration strong {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.hub-home-selecao .hub-home-iteration small {
+    font-size: 11px;
+    line-height: 1.4;
+}
+
+.hub-home-selecao .hub-home-iteration .hub-home-secondary {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    font-size: 11px;
+}
+
+/* Divisão entre disponíveis e concluídas */
+.hub-home-selecao .hub-home-list-concluidas {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border-color, #dfe6ef);
+}
+
+/* Estado vazio */
+.hub-home-selecao .hub-home-empty {
+    padding: 13px 15px;
+    border-radius: 8px;
+    font-size: 11px;
+    box-shadow: none;
+}
+
+/* Acesso secundário à Central de Revisão */
+.hub-home-selecao .hub-home-review-link {
+    gap: 18px;
+    padding: 16px 19px;
+    border-radius: 10px;
+    box-shadow: none;
+}
+
+.hub-home-selecao .hub-home-review-link > div {
+    gap: 12px;
+    align-items: center;
+}
+
+.hub-home-selecao .hub-home-review-link h3 {
+    margin: 0 0 4px;
+    font-size: 12px;
+}
+
+.hub-home-selecao .hub-home-review-link p {
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.hub-home-selecao .hub-home-review-link .hub-home-secondary {
+    flex-shrink: 0;
+    padding: 9px 13px;
+    font-size: 11px;
+}
+
+/* Acessibilidade */
+.hub-home-selecao .hub-home-secondary:focus-visible {
+    outline: 2px solid var(--accent-color, #2864a5);
+    outline-offset: 3px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .hub-home-dashboard.hub-home-selecao {
+        padding: 22px 0 30px;
+        gap: 18px;
+    }
+
+    .hub-home-sprints-panel {
+        padding: 18px 16px;
+    }
+
+    .hub-home-selecao .hub-home-review-link {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hub-home-selecao .hub-home-review-link .hub-home-secondary {
+        align-self: flex-start;
+    }
+}
+
+@media (max-width: 520px) {
+    .hub-home-sprints-panel {
+        padding: 16px 12px;
+    }
+
+    .hub-home-selecao .hub-home-iteration {
+        flex-wrap: wrap;
+    }
+
+    .hub-home-selecao .hub-home-iteration > span {
+        flex-basis: calc(100% - 40px);
+    }
+
+    .hub-home-selecao .hub-home-iteration .hub-home-secondary {
+        margin-left: auto;
+    }
+
+    .hub-home-selecao .hub-home-list-heading {
+        align-items: flex-start;
+    }
+}
+
+/* Sprint Ativa — indicadores consolidados */
+.hub-home-indicators-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hub-home-indicators-toolbar h3, .hub-home-indicators-details h3 { margin: 0 0 5px; font-size: 14px; color: var(--text-primary); }
+.hub-home-indicators-toolbar p, .hub-home-indicators-source { margin: 0; font-size: 12px; color: var(--text-secondary); }
+.hub-home-indicators-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.hub-home-indicators-grid .hub-home-metric { padding: 14px 16px; }
+.hub-home-indicators-grid .hub-home-metric strong { font-size: 25px; margin: 9px 0 6px; }
+.hub-home-indicators-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.hub-home-indicators-details section { padding: 16px; background: var(--surface, #fff); border: 1px solid var(--border-color); border-radius: 12px; }
+.hub-home-indicators-details dl { margin: 12px 0 0; }
+.hub-home-indicators-details dl div { display: flex; justify-content: space-between; gap: 10px; padding: 7px 0; border-bottom: 1px solid var(--border-color); font-size: 12px; }
+.hub-home-indicators-details dl div:last-child { border-bottom: 0; }
+.hub-home-indicators-details dt { color: var(--text-secondary); }
+.hub-home-indicators-details dd { margin: 0; color: var(--text-primary); font-weight: 700; }
+.hub-home-indicators-details p, .hub-home-indicators-message { margin: 12px 0 0; color: var(--text-secondary); font-size: 12px; }
+@media (max-width: 1050px) { .hub-home-indicators-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 600px) { .hub-home-indicators-grid, .hub-home-indicators-details { grid-template-columns: 1fr; } }
+
+/* Central de Atenção — Sprint Ativa */
+.hub-attention { margin-top: 22px; padding: 20px; border: 1px solid var(--border-color, #dfe6ef); border-radius: 12px; background: var(--surface, #fff); color: var(--text-primary, #10233f); }
+.hub-attention-header { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+.hub-attention-header h3 { margin: 5px 0 4px; font-size: 17px; }
+.hub-attention-header p, .hub-attention-note { margin: 0; font-size: 12px; color: var(--text-secondary, #68788c); }
+.hub-attention-count { flex-shrink: 0; font-size: 12px; font-weight: 650; }
+.hub-attention-filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 17px 0 12px; }
+.hub-attention-filters button { border: 1px solid var(--border-color, #dfe6ef); border-radius: 7px; padding: 7px 10px; background: transparent; color: inherit; font: inherit; font-size: 11px; cursor: pointer; }
+.hub-attention-filters button.is-active { border-color: var(--accent-color, #2864a5); color: var(--accent-color, #2864a5); font-weight: 700; }
+.hub-attention-filters button span { margin-left: 5px; opacity: .75; }
+.hub-attention-list { display: grid; gap: 0; }
+.hub-attention-item { display: flex; align-items: flex-start; gap: 13px; padding: 12px 0; border-top: 1px solid var(--border-color, #dfe6ef); }
+.hub-attention-severity { flex-shrink: 0; min-width: 92px; padding: 4px 7px; border-radius: 5px; background: var(--app-bg, #eef3f9); font-size: 10px; text-align: center; }
+.hub-attention-severity.severity-atencao { color: #bb6918; }
+.hub-attention-severity.severity-dados { color: var(--accent-color, #2864a5); }
+.hub-attention-content { min-width: 0; }
+.hub-attention-content strong { display: block; overflow-wrap: anywhere; font-size: 12px; }
+.hub-attention-content p { margin: 4px 0; font-size: 12px; color: var(--text-secondary, #68788c); }
+.hub-attention-content small { font-size: 10px; color: var(--text-secondary, #68788c); }
+.hub-attention-note { margin-top: 14px; line-height: 1.6; }
+.hub-attention-empty { padding: 15px 0; font-size: 12px; color: var(--text-secondary, #68788c); }
+.hub-attention-more { padding: 8px 0; border: 0; background: transparent; color: var(--accent-color, #2864a5); font: inherit; font-size: 12px; cursor: pointer; }
+@media (max-width: 600px) { .hub-attention { padding: 14px; } .hub-attention-header { align-items: flex-start; flex-direction: column; } .hub-attention-item { flex-direction: column; gap: 6px; } }
+
+/* Central de Atenção v2 — priorização e investigação progressiva */
+.hub-attention-priorities { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 13px; }
+.hub-attention-priorities button { padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 7px; background: transparent; color: var(--text-secondary); font: inherit; font-size: 11px; cursor: pointer; }
+.hub-attention-priorities button.is-active { border-color: var(--accent-color); color: var(--accent-color); font-weight: 700; }
+.hub-attention-priorities button span { margin-left: 5px; opacity: .8; }
+.hub-attention-item { padding: 9px 0; gap: 10px; }
+.hub-attention-content { flex: 1; }
+.hub-attention-severity { min-width: 100px; }
+.hub-attention-severity.severity-acao { color: #d08a30; }
+.hub-attention-severity.severity-informativo { color: var(--text-secondary); }
+.hub-attention-toggle { display: flex; width: 100%; justify-content: space-between; align-items: center; gap: 12px; text-align: left; border: 0; padding: 0; background: transparent; color: var(--text-primary); font: inherit; cursor: pointer; }
+.hub-attention-toggle > span { min-width: 0; }
+.hub-attention-toggle strong { font-size: 12px; }
+.hub-attention-toggle small { display: block; margin-top: 3px; font-size: 11px; color: var(--text-secondary); }
+.hub-attention-toggle svg { flex-shrink: 0; transition: transform .15s ease; }
+.hub-attention-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.hub-attention-toggle:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 3px; }
+.hub-attention-expanded { margin-top: 10px; padding: 11px 13px; background: var(--app-bg); border: 1px solid var(--border-color); border-radius: 8px; overflow-wrap: anywhere; }
+.hub-attention-expanded p { margin: 0 0 7px; line-height: 1.5; }
+.hub-attention-expanded small { color: var(--text-secondary); }
+
+/* Sprint Ativa — hierarquia compacta: indicadores primeiro, atenção em seguida. */
+.hub-home-indicators-grid { gap: 8px; }
+.hub-home-indicators-grid .hub-home-metric { padding: 10px 12px; border-radius: 9px; min-height: 68px; justify-content: center; }
+.hub-home-indicators-grid .hub-home-metric span { font-size: 11px; line-height: 1.25; }
+.hub-home-indicators-grid .hub-home-metric strong { font-size: 23px; line-height: 1.1; margin: 5px 0 0; }
+.hub-home-indicators-grid .hub-home-metric small { margin-top: 3px; font-size: 10px; }
+.hub-home-indicators-toolbar { margin-bottom: 9px; }
+.hub-home-indicators-toolbar h3 { margin-bottom: 2px; }
+.hub-home-indicators-source { margin-top: 8px; font-size: 11px; }
+.hub-attention { margin-top: 15px; }
+.hub-home-indicators-disclosure { margin-top: 12px; padding: 0; border: 1px solid var(--border-color); border-radius: 10px; background: var(--surface); }
+.hub-home-indicators-disclosure > summary { display: flex; align-items: center; justify-content: space-between; cursor: pointer; list-style: none; padding: 12px 15px; font-size: 12px; font-weight: 650; color: var(--text-primary); }
+.hub-home-indicators-disclosure > summary::-webkit-details-marker { display: none; }
+.hub-home-indicators-disclosure > summary svg { transition: transform .15s ease; }
+.hub-home-indicators-disclosure[open] > summary svg { transform: rotate(180deg); }
+.hub-home-indicators-disclosure > summary:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+.hub-home-indicators-disclosure .hub-home-indicators-details { padding: 0 12px 12px; }
+@media (max-width: 1050px) { .hub-home-indicators-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 760px) { .hub-home-indicators-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .hub-home-indicators-grid .hub-home-metric { padding: 9px 10px; min-height: 62px; } .hub-home-indicators-grid .hub-home-metric strong { font-size: 21px; } .hub-home-indicators-details { grid-template-columns: 1fr; } }
+
+/* Acompanhamento operacional: edição pontual dentro da ocorrência expandida. */
+.hub-followup { margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-color); display: grid; gap: 10px; }
+.hub-followup > strong { font-size: 12px; }
+.hub-followup label { display: grid; gap: 5px; font-size: 11px; color: var(--text-secondary); }
+.hub-followup select, .hub-followup textarea { width: 100%; min-width: 0; box-sizing: border-box; padding: 8px 10px; border: 1px solid var(--border-color); border-radius: 7px; background: var(--surface); color: var(--text-primary); font: inherit; font-size: 12px; }
+.hub-followup > button { justify-self: start; padding: 8px 12px; border: 1px solid var(--accent-color); border-radius: 7px; background: var(--accent-color); color: #fff; cursor: pointer; font: inherit; font-size: 12px; }
+.hub-followup > button:disabled { opacity: .5; cursor: not-allowed; }
+.hub-followup details { font-size: 11px; color: var(--text-secondary); }
+.hub-followup summary { cursor: pointer; }
+.hub-followup ul { margin: 8px 0 0; padding-left: 18px; }
+.hub-followup li { margin-bottom: 6px; overflow-wrap: anywhere; }
+
+/* Evolução operacional: resumo compacto, detalhes sob demanda. */
+.hub-evolution { margin: 16px 0; padding: 15px 20px; border: 1px solid var(--border-color, #344155); border-radius: 12px; background: var(--surface-secondary, rgba(120,145,180,.08)); }
+.hub-evolution-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.hub-evolution-heading h3 { margin: 0; font-size: 15px; }
+.hub-evolution-heading strong { font-size: 12px; white-space: nowrap; }
+.hub-evolution p { font-size: 12px; margin: 8px 0 0; }
+.hub-evolution-period { opacity: .8; }
+.hub-evolution summary { cursor: pointer; font-size: 12px; margin-top: 10px; }
+.hub-evolution-list { margin-top: 10px; max-height: 360px; overflow: auto; }
+.hub-evolution-item { border-top: 1px solid rgba(150,165,190,.2); padding: 10px 0; font-size: 12px; }
+.hub-evolution-item span { margin-left: 12px; opacity: .75; }
+.hub-evolution-item p { margin-top: 4px; overflow-wrap: anywhere; }
+
+/* Evolução da sprint: resumo compacto e paginação de altura previsível. */
+.hub-evolution-summary { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; font-size: 12px; }
+.hub-evolution-summary span { display: inline-flex; gap: 7px; align-items: center; }
+.hub-evolution-summary strong { font-size: 13px; }
+.hub-evolution-details { margin-top: 10px; }
+.hub-evolution-filters { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 12px; }
+.hub-evolution-filters button, .hub-evolution-more { background: transparent; color: inherit; border: 1px solid var(--border-color, #344155); border-radius: 6px; padding: 6px 10px; font: inherit; font-size: 12px; cursor: pointer; }
+.hub-evolution-filters button.is-active { border-color: var(--primary-color, #82aaff); font-weight: 700; }
+.hub-evolution-count { opacity: .75; }
+.hub-evolution-item-heading { display: flex; align-items: center; flex-wrap: wrap; gap: 8px; }
+.hub-evolution-item-heading span { margin-left: 0; }
+.hub-evolution-impact { border: 1px solid currentColor; border-radius: 5px; padding: 2px 6px; font-size: 11px; }
+.hub-evolution-impact.is-melhoria { color: #62c99c; }
+.hub-evolution-impact.is-regressao { color: #f0a08d; }
+.hub-evolution-impact.is-neutro { opacity: .75; }
+.hub-evolution-more { margin-top: 10px; }
+
+/* Paginação da evolução: controles compactos, sem rolagem infinita. */
+.hub-evolution-toolbar, .hub-evolution-pagination { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 10px; margin-top: 12px; font-size: 12px; }
+.hub-evolution-toolbar label { display: inline-flex; align-items: center; gap: 8px; }
+.hub-evolution-toolbar select { background: var(--surface-secondary, #1d2838); color: inherit; border: 1px solid var(--border-color, #344155); border-radius: 6px; padding: 5px 8px; font: inherit; }
+.hub-evolution-pagination { justify-content: flex-end; border-top: 1px solid var(--border-color, #344155); padding-top: 10px; }
+.hub-evolution-pagination button { background: transparent; color: inherit; border: 1px solid var(--border-color, #344155); border-radius: 6px; padding: 6px 10px; cursor: pointer; font: inherit; }
+.hub-evolution-pagination button:disabled { opacity: .4; cursor: not-allowed; }
+.hub-evolution-list { max-height: none; overflow: visible; }
+@media (max-width: 600px) { .hub-evolution-pagination { justify-content: center; } .hub-evolution-pagination button { padding: 6px; } }
+
+.hub-home-iteration .hub-frozen-badge { display: inline-flex; align-items: center; gap: 4px; margin-left: 8px; padding: 3px 6px; font-size: 10px; line-height: 1.2; font-weight: 500; color: #5899d8; background: #4387c918; border: 1px solid #4387c940; border-radius: 5px; vertical-align: middle; }
+.hub-home-dashboard > .hub-home-actions { gap: 10px; align-items: center; }
+.hub-home-dashboard > .hub-home-actions > button { min-height: 36px; height: auto; padding: 9px 13px; border-radius: 6px; font-size: 12px; font-weight: 500; }
+
+/* Compact sprint footer actions, consistent with the dashboard controls. */
+.hub-home-dashboard > .hub-home-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 0;
+}
+.hub-home-dashboard > .hub-home-actions > button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    gap: 7px;
+    width: auto;
+    height: 34px;
+    min-height: 34px;
+    padding: 0 12px;
+    border-radius: 6px;
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0;
+    box-shadow: none;
+}
+.hub-home-dashboard > .hub-home-actions > .hub-primary-button {
+    background: #2674c8;
+    border: 1px solid #3986d6;
+    color: #fff;
+}
+.hub-home-dashboard > .hub-home-actions > .hub-primary-button:hover { background: #2d81d8; }
+.hub-home-dashboard > .hub-home-actions > .hub-home-secondary {
+    background: transparent;
+    border: 1px solid var(--qh-border, #3a5069);
+    color: var(--qh-text, #bfd0e5);
+}
+.hub-home-dashboard > .hub-home-actions > .hub-home-secondary:hover { background: #377fc012; border-color: #5383b5; }
+.hub-home-dashboard > .hub-home-actions > button > svg { width: 15px; height: 15px; stroke-width: 1.8; }
+.hub-home-dashboard > .hub-home-actions > button:focus-visible { outline: 2px solid #71adf0; outline-offset: 3px; }
+
+/* Footer actions use the theme accent with a soft surface. */
+.hub-home-dashboard > .hub-home-actions {
+    gap: 10px;
+    margin-top: 20px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border, #344256);
+}
+.hub-home-dashboard > .hub-home-actions > button { height: 32px; min-height: 32px; padding: 0 11px; font-size: 11px; gap: 7px; }
+.hub-home-dashboard > .hub-home-actions > .hub-primary-button {
+    color: var(--accent);
+    background: var(--accent-bg);
+    border-color: var(--accent-border);
+}
+.hub-home-dashboard > .hub-home-actions > .hub-primary-button:hover { color: var(--accent); background: color-mix(in srgb, var(--accent) 22%, transparent); border-color: var(--accent); }
+.hub-home-dashboard > .hub-home-actions > .hub-home-secondary { color: var(--text-secondary, #a8b9ce); border-color: var(--border, #344256); background: transparent; }
+.hub-home-dashboard > .hub-home-actions > .hub-home-secondary:hover { color: var(--accent); border-color: var(--accent-border); background: var(--accent-bg); }
+.hub-home-dashboard > .hub-home-actions > button:focus-visible { outline-color: var(--accent); }
+
+/* Keep footer actions close to the cards, without an extra divider. */
+.hub-home-dashboard > .hub-home-actions {
+    border-top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.hub-home-dashboard { row-gap: 12px; }
+.hub-main:has(.hub-home-dashboard) .hub-page-footer { margin-top: 16px; padding-top: 10px; }
+
+/* Remove the dashboard's extra bottom padding before the page footer. */
+.hub-home-dashboard { padding-bottom: 10px; }
+.hub-main:has(.hub-home-dashboard) .hub-page-footer { margin-top: 8px; padding-top: 10px; }

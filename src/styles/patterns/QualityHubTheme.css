@@ -1,0 +1,406 @@
+/* Fonte única dos tokens globais e QualityHub: light, dark e automático. */
+
+/* Tema claro: padrão */
+:root,
+:root[data-theme="light"],
+.rot-overlay[data-theme="light"],
+.rot-export[data-theme="light"] {
+  color-scheme: light;
+
+  --text: #475569;
+  --text-h: #102a4c;
+  --bg: #edf2f8;
+  --border: #cbd5e1;
+  --code-bg: #e8eef7;
+  --accent: #1e477c;
+  --accent-bg: rgb(40 100 220 / 10%);
+  --accent-border: rgb(40 100 220 / 50%);
+  --social-bg: rgb(238 242 248 / 50%);
+  --shadow: rgb(0 0 0 / 10%) 0 10px 15px -3px,
+    rgb(0 0 0 / 5%) 0 4px 6px -2px;
+
+  --app-bg: #edf2f8;
+  --surface: #ffffff;
+  --text-primary: #102a4c;
+  --text-secondary: #475569;
+  --border-color: #cbd5e1;
+  --accent-color: #1e477c;
+  --qh-surface: #ffffff;
+  --qh-surface-hover: #e8f0f9;
+  --qh-input: #ffffff;
+  --qh-table: #ffffff;
+  --qh-overlay: #ffffff;
+  --qh-overlay-hover: #eef4fb;
+  --qh-text: #102a4c;
+  --qh-muted: #475569;
+  --qh-border: #c4d2e2;
+  --qh-focus: #315f98;
+  --qh-success-text: #166534;
+  --qh-success-bg: #dcfce7;
+  --qh-warning-text: #92400e;
+  --qh-warning-bg: #fef3c7;
+  --qh-danger-text: #b91c1c;
+  --qh-danger-bg: #fee2e2;
+  --qh-info-text: #24517f;
+  --qh-info-bg: #dbeafe;
+  --qh-cockpit-primary: #1473e6;
+  --qh-cockpit-success: #1bad8c;
+  --qh-cockpit-danger: #e96363;
+  --qh-cockpit-warning: #f47d56;
+  --qh-cockpit-muted: #9aabc3;
+  --qh-cockpit-eyebrow: #6080ac;
+  --qh-cockpit-subtext: #74829a;
+  --qh-cockpit-status-bg: #d9f7e9;
+  --qh-cockpit-status-text: #087a53;
+  --qh-cockpit-ring-track: #e7eef6;
+  --qh-cockpit-coverage-blue: #1474ef;
+  --qh-cockpit-icon-bg: #e9f2ff;
+  --qh-cockpit-subtle-blue: #6984aa;
+  --qh-cockpit-tab-bg: #e8eef7;
+  --qh-cockpit-muted-detail: #7a8ba3;
+  --qh-cockpit-soft-gray: #edf2f8;
+  --qh-cockpit-bar-start: #90bff7;
+  --qh-cockpit-bar-end: #327edb;
+  --qh-cockpit-row-bg: #f5f8fc;
+  --qh-cockpit-row-text: #627c9b;
+  --qh-cockpit-soft-border: #e7edf5;
+  --qh-cockpit-hover-border: #83b5f1;
+  --qh-cockpit-hover-bg: #f5faff;
+  --qh-cockpit-secondary-label: #7789a1;
+  --qh-cockpit-warning-bg: #fff0e9;
+  --qh-cockpit-warning-text: #e77c39;
+  --qh-cockpit-danger-bg: #ffe9eb;
+  --qh-cockpit-danger-text: #e44856;
+  --qh-cockpit-overdue: #991b1b;
+  --qh-cockpit-info-bg: #eaf2ff;
+  --qh-cockpit-info-text: #337fdb;
+  --qh-cockpit-neutral-dot: #8fa3bd;
+  --qh-cockpit-link: #126ae0;
+  --qh-cockpit-soft-panel: #f4f8fc;
+  --qh-cockpit-meta: #6e819b;
+  --qh-cockpit-divider: #e1e8f2;
+  --qh-cockpit-status-deep: #087d63;
+  --qh-cockpit-status-dot: #0daa83;
+  --qh-cockpit-progress-track: #dfe8f2;
+  --qh-cockpit-progress-start: #17a985;
+  --qh-cockpit-progress-end: #16c7a1;
+  --qh-cockpit-button: #1265e9;
+  --qh-cockpit-button-hover: #0754cd;
+  --qh-cockpit-focus-ring: #70aaff;
+  --qh-cockpit-success-bright: #7fe3c1;
+  --qh-cockpit-check: #16b785;
+  --qh-cockpit-focus-blue: #3183f2;
+  --qh-cockpit-icon-blue-bg: #e8f2ff;
+  --qh-cockpit-icon-blue: #126df0;
+  --qh-cockpit-icon-red-bg: #ffedf0;
+  --qh-cockpit-icon-red: #e63d51;
+
+
+  /* Cores específicas de estados do cockpit, preservadas no tema claro */
+  --qh-cockpit-legacy-119c78: #119c78;
+  --qh-cockpit-legacy-128d6d: #128d6d;
+  --qh-cockpit-tabs-surface: #edf3fa;
+  --qh-cockpit-tab-inactive-text: #102a4c;
+  --qh-cockpit-tab-improvement-text: #128d6d;
+  --qh-cockpit-tab-regression-text: #d75560;
+  --qh-cockpit-legacy-15925c: #15925c;
+  --qh-cockpit-legacy-2379ed: #2379ed;
+  --qh-cockpit-legacy-2879e5: #2879e5;
+  --qh-cockpit-legacy-53709b: #53709b;
+  --qh-cockpit-legacy-547199: #547199;
+  --qh-cockpit-legacy-7291b8: #7291b8;
+  --qh-cockpit-legacy-7487a1: #7487a1;
+  --qh-cockpit-legacy-7586a1: #7586a1;
+  --qh-cockpit-legacy-7889a2: #7889a2;
+  --qh-cockpit-legacy-7894b6: #7894b6;
+  --qh-cockpit-legacy-8192aa: #8192aa;
+  --qh-cockpit-legacy-93bdff: #93bdff;
+  --qh-cockpit-legacy-9ac1f4: #9ac1f4;
+  --qh-cockpit-legacy-d75560: #d75560;
+  --qh-cockpit-legacy-e34e55: #e34e55;
+  --qh-cockpit-legacy-e44e62: #e44e62;
+  --qh-cockpit-legacy-e6f7f1: #e6f7f1;
+  --qh-cockpit-legacy-eaf3ff: #eaf3ff;
+  --qh-cockpit-legacy-ec8b31: #ec8b31;
+  --qh-cockpit-legacy-ee4e62: #ee4e62;
+  --qh-cockpit-legacy-ff9aa6: #ff9aa6;
+  --qh-cockpit-legacy-fff0f1: #fff0f1;
+  --qh-cockpit-legacy-fff2e9: #fff2e9;
+
+}
+
+/* Tema escuro */
+:root[data-theme="dark"],
+.rot-overlay[data-theme="dark"],
+.rot-export[data-theme="dark"] {
+  color-scheme: dark;
+
+  --text: #aab7c8;
+  --text-h: #f3f4f6;
+  --bg: #111827;
+  --border: #374151;
+  --code-bg: #1f2937;
+  --accent: #7da5ff;
+  --accent-bg: rgb(125 165 255 / 15%);
+  --accent-border: rgb(125 165 255 / 50%);
+  --social-bg: rgb(31 41 55 / 50%);
+  --shadow: rgb(0 0 0 / 30%) 0 10px 15px -3px,
+    rgb(0 0 0 / 20%) 0 4px 6px -2px;
+
+  --app-bg: #111827;
+  --surface: #1f2937;
+  --text-primary: #f3f4f6;
+  --text-secondary: #aab7c8;
+  --border-color: #374151;
+  --accent-color: #7da5ff;
+  --qh-surface: #202b3b;
+  --qh-surface-hover: #202c3b;
+  --qh-input: #17212e;
+  --qh-table: #111923;
+  --qh-overlay: #263346;
+  --qh-overlay-hover: #3b4d66;
+  --qh-text: #eaf0f8;
+  --qh-muted: #aebbd0;
+  --qh-border: #344155;
+  --qh-focus: #79aaff;
+  --qh-success-text: #6ee7b7;
+  --qh-success-bg: rgba(16, 185, 129, 0.15);
+  --qh-warning-text: #fbbf24;
+  --qh-warning-bg: rgba(245, 158, 11, 0.15);
+  --qh-danger-text: #fca5a5;
+  --qh-danger-bg: rgba(239, 68, 68, 0.15);
+  --qh-info-text: #93c5fd;
+  --qh-info-bg: rgba(59, 130, 246, 0.15);
+  --qh-cockpit-primary: #64a7ff;
+  --qh-cockpit-success: #42d5af;
+  --qh-cockpit-danger: #ff8290;
+  --qh-cockpit-warning: #ffae7d;
+  --qh-cockpit-muted: #9aafcb;
+  --qh-cockpit-eyebrow: #9cbae5;
+  --qh-cockpit-subtext: #a6b7ce;
+  --qh-cockpit-status-bg: #153e36;
+  --qh-cockpit-status-text: #76e9bd;
+  --qh-cockpit-ring-track: #34465c;
+  --qh-cockpit-coverage-blue: #74adff;
+  --qh-cockpit-icon-bg: #243c59;
+  --qh-cockpit-subtle-blue: #aac1e1;
+  --qh-cockpit-tab-bg: #2a3b50;
+  --qh-cockpit-muted-detail: #a1b1c8;
+  --qh-cockpit-soft-gray: #263447;
+  --qh-cockpit-bar-start: #416c9f;
+  --qh-cockpit-bar-end: #73aafa;
+  --qh-cockpit-row-bg: #263447;
+  --qh-cockpit-row-text: #b0c0d7;
+  --qh-cockpit-soft-border: #36485d;
+  --qh-cockpit-hover-border: #6a9bd9;
+  --qh-cockpit-hover-bg: #2a3b50;
+  --qh-cockpit-secondary-label: #a7b8ce;
+  --qh-cockpit-warning-bg: #473225;
+  --qh-cockpit-warning-text: #ffb57d;
+  --qh-cockpit-danger-bg: #492b36;
+  --qh-cockpit-danger-text: #ff9ca9;
+  --qh-cockpit-overdue: #ff4d5d;
+  --qh-cockpit-info-bg: #263e5d;
+  --qh-cockpit-info-text: #91bdff;
+  --qh-cockpit-neutral-dot: #91a6c2;
+  --qh-cockpit-link: #8dbaff;
+  --qh-cockpit-soft-panel: #263447;
+  --qh-cockpit-meta: #b0c1d8;
+  --qh-cockpit-divider: #35475b;
+  --qh-cockpit-status-deep: #74e2bf;
+  --qh-cockpit-status-dot: #48d5ac;
+  --qh-cockpit-progress-track: #35465b;
+  --qh-cockpit-progress-start: #28ae90;
+  --qh-cockpit-progress-end: #48d7b2;
+  --qh-cockpit-button: #246bce;
+  --qh-cockpit-button-hover: #3985ed;
+  --qh-cockpit-focus-ring: #9cc7ff;
+  --qh-cockpit-success-bright: #81e9cb;
+  --qh-cockpit-check: #50d8ae;
+  --qh-cockpit-focus-blue: #85b8ff;
+  --qh-cockpit-icon-blue-bg: #283f60;
+  --qh-cockpit-icon-blue: #94bfff;
+  --qh-cockpit-icon-red-bg: #4b2e3c;
+  /* Estados específicos do cockpit no tema escuro */
+  --qh-cockpit-legacy-119c78: #7ef1d3;
+  --qh-cockpit-legacy-128d6d: #80efd2;
+  --qh-cockpit-tabs-surface: #263447;
+  --qh-cockpit-tab-inactive-text: #c5d4e8;
+  --qh-cockpit-tab-improvement-text: #6ee7b7;
+  --qh-cockpit-tab-regression-text: #ff9ca9;
+  --qh-cockpit-legacy-15925c: #82edbf;
+  --qh-cockpit-legacy-2379ed: #7baff4;
+  --qh-cockpit-legacy-2879e5: #80b0f0;
+  --qh-cockpit-legacy-53709b: #a2b3cd;
+  --qh-cockpit-legacy-547199: #a3b4cc;
+  --qh-cockpit-legacy-7291b8: #a0b5cf;
+  --qh-cockpit-legacy-7487a1: #aabbd1;
+  --qh-cockpit-legacy-7586a1: #aabbd1;
+  --qh-cockpit-legacy-7889a2: #aabbd1;
+  --qh-cockpit-legacy-7894b6: #a2b6cd;
+  --qh-cockpit-legacy-8192aa: #aabbd1;
+  --qh-cockpit-legacy-93bdff: #a1c2f7;
+  --qh-cockpit-legacy-9ac1f4: #a3c7f5;
+  --qh-cockpit-legacy-d75560: #e48b93;
+  --qh-cockpit-legacy-e34e55: #eb8489;
+  --qh-cockpit-legacy-e44e62: #ec8391;
+  --qh-cockpit-legacy-e6f7f1: #3a372c;
+  --qh-cockpit-legacy-eaf3ff: #273e55;
+  --qh-cockpit-legacy-ec8b31: #f3b57c;
+  --qh-cockpit-legacy-ee4e62: #f27d8b;
+  --qh-cockpit-legacy-ff9aa6: #f7a1ab;
+  --qh-cockpit-legacy-fff0f1: #3d3038;
+  --qh-cockpit-legacy-fff2e9: #3d3038;
+
+  --qh-cockpit-icon-red: #ff9baa;
+}
+
+/* Tema automático: acompanha o sistema */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    color-scheme: dark;
+
+    --text: #aab7c8;
+    --text-h: #f3f4f6;
+    --bg: #111827;
+    --border: #374151;
+    --code-bg: #1f2937;
+    --accent: #7da5ff;
+    --accent-bg: rgb(125 165 255 / 15%);
+    --accent-border: rgb(125 165 255 / 50%);
+    --social-bg: rgb(31 41 55 / 50%);
+    --shadow: rgb(0 0 0 / 30%) 0 10px 15px -3px,
+      rgb(0 0 0 / 20%) 0 4px 6px -2px;
+
+    --app-bg: #111827;
+    --surface: #1f2937;
+    --text-primary: #f3f4f6;
+    --text-secondary: #aab7c8;
+    --border-color: #374151;
+    --accent-color: #7da5ff;
+    --qh-surface: #202b3b;
+    --qh-surface-hover: #202c3b;
+    --qh-input: #17212e;
+    --qh-table: #111923;
+    --qh-overlay: #263346;
+    --qh-overlay-hover: #3b4d66;
+    --qh-text: #eaf0f8;
+    --qh-muted: #aebbd0;
+    --qh-border: #344155;
+  --qh-focus: #79aaff;
+  --qh-success-text: #6ee7b7;
+  --qh-success-bg: rgba(16, 185, 129, 0.15);
+  --qh-warning-text: #fbbf24;
+  --qh-warning-bg: rgba(245, 158, 11, 0.15);
+  --qh-danger-text: #fca5a5;
+  --qh-danger-bg: rgba(239, 68, 68, 0.15);
+  --qh-info-text: #93c5fd;
+  --qh-info-bg: rgba(59, 130, 246, 0.15);
+  --qh-cockpit-primary: #64a7ff;
+  --qh-cockpit-success: #42d5af;
+  --qh-cockpit-danger: #ff8290;
+  --qh-cockpit-warning: #ffae7d;
+  --qh-cockpit-muted: #9aafcb;
+  --qh-cockpit-eyebrow: #9cbae5;
+  --qh-cockpit-subtext: #a6b7ce;
+  --qh-cockpit-status-bg: #153e36;
+  --qh-cockpit-status-text: #76e9bd;
+  --qh-cockpit-ring-track: #34465c;
+  --qh-cockpit-coverage-blue: #74adff;
+  --qh-cockpit-icon-bg: #243c59;
+  --qh-cockpit-subtle-blue: #aac1e1;
+  --qh-cockpit-tab-bg: #2a3b50;
+  --qh-cockpit-muted-detail: #a1b1c8;
+  --qh-cockpit-soft-gray: #263447;
+  --qh-cockpit-bar-start: #416c9f;
+  --qh-cockpit-bar-end: #73aafa;
+  --qh-cockpit-row-bg: #263447;
+  --qh-cockpit-row-text: #b0c0d7;
+  --qh-cockpit-soft-border: #36485d;
+  --qh-cockpit-hover-border: #6a9bd9;
+  --qh-cockpit-hover-bg: #2a3b50;
+  --qh-cockpit-secondary-label: #a7b8ce;
+  --qh-cockpit-warning-bg: #473225;
+  --qh-cockpit-warning-text: #ffb57d;
+  --qh-cockpit-danger-bg: #492b36;
+  --qh-cockpit-danger-text: #ff9ca9;
+  --qh-cockpit-overdue: #ff4d5d;
+  --qh-cockpit-info-bg: #263e5d;
+  --qh-cockpit-info-text: #91bdff;
+  --qh-cockpit-neutral-dot: #91a6c2;
+  --qh-cockpit-link: #8dbaff;
+  --qh-cockpit-soft-panel: #263447;
+  --qh-cockpit-meta: #b0c1d8;
+  --qh-cockpit-divider: #35475b;
+  --qh-cockpit-status-deep: #74e2bf;
+  --qh-cockpit-status-dot: #48d5ac;
+  --qh-cockpit-progress-track: #35465b;
+  --qh-cockpit-progress-start: #28ae90;
+  --qh-cockpit-progress-end: #48d7b2;
+  --qh-cockpit-button: #246bce;
+  --qh-cockpit-button-hover: #3985ed;
+  --qh-cockpit-focus-ring: #9cc7ff;
+  --qh-cockpit-success-bright: #81e9cb;
+  --qh-cockpit-check: #50d8ae;
+  --qh-cockpit-focus-blue: #85b8ff;
+  --qh-cockpit-icon-blue-bg: #283f60;
+  --qh-cockpit-icon-blue: #94bfff;
+  --qh-cockpit-icon-red-bg: #4b2e3c;
+  /* Estados específicos do cockpit no tema escuro */
+  --qh-cockpit-legacy-119c78: #7ef1d3;
+  --qh-cockpit-legacy-128d6d: #80efd2;
+  --qh-cockpit-tabs-surface: #263447;
+  --qh-cockpit-tab-inactive-text: #c5d4e8;
+  --qh-cockpit-tab-improvement-text: #6ee7b7;
+  --qh-cockpit-tab-regression-text: #ff9ca9;
+  --qh-cockpit-legacy-15925c: #82edbf;
+  --qh-cockpit-legacy-2379ed: #7baff4;
+  --qh-cockpit-legacy-2879e5: #80b0f0;
+  --qh-cockpit-legacy-53709b: #a2b3cd;
+  --qh-cockpit-legacy-547199: #a3b4cc;
+  --qh-cockpit-legacy-7291b8: #a0b5cf;
+  --qh-cockpit-legacy-7487a1: #aabbd1;
+  --qh-cockpit-legacy-7586a1: #aabbd1;
+  --qh-cockpit-legacy-7889a2: #aabbd1;
+  --qh-cockpit-legacy-7894b6: #a2b6cd;
+  --qh-cockpit-legacy-8192aa: #aabbd1;
+  --qh-cockpit-legacy-93bdff: #a1c2f7;
+  --qh-cockpit-legacy-9ac1f4: #a3c7f5;
+  --qh-cockpit-legacy-d75560: #e48b93;
+  --qh-cockpit-legacy-e34e55: #eb8489;
+  --qh-cockpit-legacy-e44e62: #ec8391;
+  --qh-cockpit-legacy-e6f7f1: #3a372c;
+  --qh-cockpit-legacy-eaf3ff: #273e55;
+  --qh-cockpit-legacy-ec8b31: #f3b57c;
+  --qh-cockpit-legacy-ee4e62: #f27d8b;
+  --qh-cockpit-legacy-ff9aa6: #f7a1ab;
+  --qh-cockpit-legacy-fff0f1: #3d3038;
+  --qh-cockpit-legacy-fff2e9: #3d3038;
+
+  --qh-cockpit-icon-red: #ff9baa;
+  }
+}
+
+/* Shared severity scale for report bars and future priority visualizations. */
+:root, .rot-overlay, .rot-export {
+  --qh-severity-lowest: #35b879;
+  --qh-severity-low: #4c8cf5;
+  --qh-severity-medium: #f6d365;
+  --qh-severity-high: #f97316;
+  --qh-severity-highest: #ef4444;
+  --qh-severity-critical: #c5223d;
+  --qh-severity-unknown: #94a3b8;
+}
+
+/* Workflow colors are independent of defect-status ranking. */
+:root, .rot-overlay, .rot-export {
+  --qh-defect-status-complete: #20b982;
+  --qh-defect-status-canceled: #94a3b8;
+  --qh-defect-status-progress: #3b82f6;
+  --qh-defect-status-review: #9564db;
+  --qh-defect-status-open: #e5a12a;
+  --qh-defect-status-other: #7b8da6;
+}
+:root[data-theme="light"], .rot-overlay[data-theme="light"], .rot-export[data-theme="light"] {
+  --qh-severity-medium: #d6a61b;
+}
