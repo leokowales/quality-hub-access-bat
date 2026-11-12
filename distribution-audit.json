@@ -60,6 +60,7 @@
     "backend/tools/qualityhub_local.py": "c062bcf35a99f51ea42877ffa83540f26b1cd6a8bbb7d123ebe7cfcba61f3bce",
     "backend/tools/qualityhub_update.py": "8b7eb1cb3fbb3307c2459767468aedf981e1f8103ecb81aa9e04d0e622436a4e",
     "index.html": "619d72927302cb3b6575ada2489d284ffa0cda4743f401c4cd9d0bea33e7a31f",
+    "latest.json": "3b2f22bb4e83c3532432ca290338b7036c9e5d9497e7873139211ee87fe01275",
     "package-lock.json": "67d8a74f191ec32afa95423fa073387ee5a4c6a1e4a9600b7ae14f6cddf4d4a8",
     "package.json": "b1df26214e7f8f7444c0390cdb65ed123fc6b49a8c98d6d3256b33ce2a7bbbff",
     "Preparar QualityHub.bat": "92fe3c51b9ed3e79961eef3ae0b45448d70245e4b87bd7adc130862c72820ec1",
@@ -68,7 +69,7 @@
     "public/qualityhub.ico": "eb2859ddeca41236d12073cd17d010dcdfbadca8a2b9f51907514f9875ab57e3",
     "public/qualityhub.png": "96e64395a9070729cc48a0d465b29a2ee3d2cb4e6deb21cacec16d87f37ad6e4",
     "QualityHub.bat": "eaed00c8fabc5286b85aeecc515fb405e93bc905ee405e8f3981adbcb0ec9f3e",
-    "README.md": "6aee21d3488b2af0a8c1605a0945152c8c5d4ee8cf8610fa2d9dd2a7ae59233e",
+    "README.md": "6ca77084ae2f48fc0d361bdb0e737cd4b22f8bf1e17f86c822abb81a131d6937",
     "src/App.tsx": "235163f04709689c038a3529421c1cdd1ebe830cc359baabbffa16b9dd9c83ba",
     "src/assets/ntt-data.png": "57a995a6c6aecc46a509d33305d6137bca1c0deb9aebda47ce349a349ef5cab9",
     "src/assets/rot-montanhas.jpg": "e55627e7414119507a3d0a0f692f3ba60efcdf1024c626a8664ae38038ae8eb8",
@@ -149,7 +150,7 @@
     "tsconfig.app.json": "e14eef6260077056d417201f234e0591277054d291fd33f06b33a2553c0a7241",
     "tsconfig.json": "770b4140bbb581e2dfd9ea9946ffc9c75a1d86ba7d2db5f77c83e37cbdf9d808",
     "tsconfig.node.json": "5473073844bead57fe07dbded3ad4babdc273c70b29a916b254527dc6b290d51",
-    "vite.config.ts": "e1eefd0ed1639c88d1213884ef760516884db9e168190e223fee6b063ad3e088"
+    "vite.config.ts": "a23097541c77df523684320cf1372a15d838bc20ba6ecbb7c4b1659cb7ee45dc"
   },
   "manual_review_required": true,
   "source_commit": "b798490d8f6def97b005849098a1beb11efd85b8",

@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-rc.10",
+  "notes": "﻿QualityHub 1.0.0-rc.10 — Homologação\n\n- Cabeçalho do ROT com logo NTT DATA, texto reposicionado e divisória única; logo SulAmérica removido também do HTML exportado.\n- Distribuição pelo BAT com preparação inicial e atualização pela tela, preservando dados e autorização individual.\n- Desktop mantém seu instalador e atualizador próprios. Modos locais de teste permanecem disponíveis.\n\nCandidata de homologação. Preserve instalações, dados e autorizações existentes; não desinstale para atualizar.\n",
+  "platforms": {
+    "windows-x86_64": {
+      "format": "qualityhub-update-v1",
+      "version": "1.0.0-rc.10",
+      "sha256": "0d5d69c0271d224a2929153b76a229f9a44e77d3b4c6a96a7e1dd45f8d22aa17",
+      "size": 23994894,
+      "url": "https://github.com/leokowales/quality-hub-distribution/releases/download/v1.0.0-rc.10/QualityHub-1.0.0-rc.10-windows-x64-setup.exe",
+      "signature": "7YYYR8T6fLz1YdhjF4TUwz4lXoBy/KdSzGt5MCO2Vt9ae7B61+zaxm2wLTpGc8ySy38wcEGuE44DWbtiJj2jDA=="
+    }
+  }
+}

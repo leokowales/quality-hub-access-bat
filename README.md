@@ -56,9 +56,11 @@ funcional depois da aprovação. Testes automatizados não substituem homologaç
 No repositório de desenvolvimento, exporte os arquivos para uma pasta nova:
 
 ```powershell
-.\.venv\Scripts\python.exe desktop\prepare_bat_distribution.py --version VERSAO_APROVADA --output build\bat\VERSAO_APROVADA
+.\.venv\Scripts\python.exe desktop\prepare_bat_distribution.py --version VERSAO_APROVADA --manifest build\distribution\VERSAO_APROVADA-reviewed\latest.json --output build\bat\VERSAO_APROVADA
 ```
 
+O manifesto da mesma versão desktop também alimenta os avisos do canal BAT;
+o botão do BAT sempre aplica o Git, sem baixar o instalador EXE.
 Revise `distribution-audit.json`, fontes e imagens antes de publicar. A busca
 automática é parcial e não certifica ausência de dados sensíveis. A exportação
 não inclui histórico Git, bancos, licenças, `.env`, chaves privadas, logs, imagens
